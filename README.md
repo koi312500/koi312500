@@ -1,9 +1,7 @@
 Hello, Github!
-I'm a student programmer Kim Geon Woo!
 
-괄호로 내일을 열어가고자 하는 고등학생 개발자, KOI입니다! 안녕하세요!
-
-PS랑 개발에 관심이 있어요!
+전하고 싶은 것, 말하고 싶은 것을
+코딩으로 만들어내는 고등학교 개발자 KOI3125입니다!
 
 ## Contact
 [![Discord @koi3125](https://discord-profile-starcea.paring.moe/discord/753625063357546556?)](https://discord.com/users/753625063357546556)
