@@ -4,7 +4,7 @@ Hello, Github!
 코딩으로 만들어내는 고등학교 개발자 KOI3125입니다!
 
 ## Contact
-[![Discord @koi3125](https://discord-profile-starcea.paring.moe/discord/753625063357546556?)](https://discord.com/users/753625063357546556)
+- [Discord @koi3125](https://discord.com/users/753625063357546556)
 - Email : koi312500@gmail.com
 
 ## Github Stats
