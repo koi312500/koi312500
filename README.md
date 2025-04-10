@@ -15,3 +15,4 @@ Hello, Github! 👋
 
 ## Solved.ac Profile
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=koi312500)](https://solved.ac/koi312500)
+[![BOJ](https://bojstat.vulcan.site/v2/en/koi312500)](https://www.acmicpc.net/user/koi312500)
