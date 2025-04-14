@@ -8,7 +8,8 @@ Hello, Github! 👋
 
 ## Contact
 - [Discord @koi3125](https://discord.com/users/753625063357546556)
-- Email : koi312500@gmail.com
+- [KOI's discord server: Hello, Discord!](https://discord.gg/mcBjTMMxN6)
+- [Email: koi312500@gmail.com](mailto:koi312500@gmail.com)
 
 ## Github Stats
 [![KOI3125's GitHub stats](https://github-readme-stats.vercel.app/api?username=koi312500&theme=tokyonight&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
