@@ -4,7 +4,7 @@ Hello, Github! 👋
 별을 동경하는 고등학교 개발자 KOI3125입니다!
 
 ## Portfolio
-- [KOI3125's portfolio](https://koi3125.com)
+- [KOI3125's portfolio](https://kimustory.net/members/koi3125)
 
 ## Contact
 - [Discord @koi3125](https://discord.com/users/753625063357546556)
