@@ -13,7 +13,7 @@ Hello, Github! 👋
 - [Email: koi312500@gmail.com](mailto:koi312500@gmail.com)
 
 ## Github Stats
-[![KOI3125's GitHub stats](https://github-readme-stats.vercel.app/api?username=koi312500&theme=tokyonight&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
+[![KOI3125's GitHub stats](https://github-stats-extended.vercel.app/api?username=koi312500&theme=tokyonight&show_icons=true)](https://github.com/stats-organization/github-stats-extended)
 
 ## Solved.ac Profile
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=koi312500)](https://solved.ac/koi312500)
