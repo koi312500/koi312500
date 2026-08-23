@@ -16,14 +16,16 @@ const projectNumberById = new Map<string, number>(
 export function WorksView({ language }: { language: Language }) {
   const [selected, setSelected] = useState<Project | null>(null);
   const [highlightedProjectId, setHighlightedProjectId] = useState(() =>
-    readProjectId(window.location.hash),
+    readProjectId(window.location.pathname, window.location.hash),
   );
 
   useEffect(() => {
-    const onHashChange = () =>
-      setHighlightedProjectId(readProjectId(window.location.hash));
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    const onRouteChange = () =>
+      setHighlightedProjectId(
+        readProjectId(window.location.pathname, window.location.hash),
+      );
+    window.addEventListener("popstate", onRouteChange);
+    return () => window.removeEventListener("popstate", onRouteChange);
   }, []);
 
   useEffect(() => {

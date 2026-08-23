@@ -23,7 +23,7 @@ export function BottomNav({ activeView, language }: BottomNavProps) {
       {items.map(({ id, icon: Icon, label }) => (
         <a
           className={`nav-link${activeView === id ? " is-active" : ""}`}
-          href={`#${id}`}
+          href={`/${id}`}
           aria-current={activeView === id ? "page" : undefined}
           key={id}
         >

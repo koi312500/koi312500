@@ -1,0 +1,234 @@
+:root {
+  font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+  color: #252a32;
+  background-color: #fffdfb;
+  --canvas: #fffdfb;
+  --panel: rgba(255, 253, 251, 0.94);
+  --panel-strong: #ffffff;
+  --ink: #252a32;
+  --muted: #65717c;
+  --line: rgba(37, 42, 50, 0.15);
+  --dot: rgba(37, 42, 50, 0.055);
+  --accent: #fd806a;
+  --accent-strong: #e96753;
+  --shadow: 0 1.25rem 3rem rgba(57, 42, 36, 0.08);
+}
+
+:root[data-theme="dark"] {
+  color: #f4efeb;
+  background-color: #171717;
+  --canvas: #171717;
+  --panel: rgba(28, 27, 26, 0.94);
+  --panel-strong: #22201f;
+  --ink: #f4efeb;
+  --muted: #c5beb9;
+  --line: rgba(255, 255, 255, 0.13);
+  --dot: rgba(255, 255, 255, 0.04);
+  --accent: #ff8c77;
+  --accent-strong: #ff9a87;
+  --shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100dvh;
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--canvas);
+  background-image: radial-gradient(circle, var(--dot) 1.25px, transparent 1.35px);
+  background-position: 3px 3px;
+  background-size: 14px 14px;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.utility-shell {
+  width: min(100% - 3rem, 56rem);
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding: 2rem 0 4rem;
+}
+
+.utility-topbar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2.75rem;
+  margin-bottom: clamp(3.5rem, 10vh, 7rem);
+}
+
+.utility-brand {
+  display: inline-flex;
+  gap: 0.55rem;
+  align-items: center;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.utility-brand::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  content: "";
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.utility-actions {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.utility-action {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  place-items: center;
+  transition: color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.utility-action:hover {
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  transform: translateY(-2px);
+}
+
+.utility-action:focus-visible,
+.utility-brand:focus-visible,
+.utility-link:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 62%, transparent);
+  outline-offset: 4px;
+}
+
+.utility-action svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+}
+
+.utility-heading {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+
+.utility-heading::after {
+  height: 1px;
+  content: "";
+  background: color-mix(in srgb, var(--accent) 36%, transparent);
+  flex: 1;
+}
+
+.utility-kicker {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.utility-title {
+  margin: 0;
+  font-size: clamp(2.7rem, 8vw, 5.3rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.utility-lede {
+  max-width: 40rem;
+  margin: 1.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.utility-footer {
+  margin-top: 2.5rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.utility-link {
+  color: var(--accent-strong);
+  font-weight: 750;
+  text-underline-offset: 0.25em;
+}
+
+@media (max-width: 640px) {
+  .utility-shell {
+    width: min(100% - 2rem, 32rem);
+    padding: 1.2rem 0 3rem;
+  }
+
+  .utility-topbar {
+    margin-bottom: 3.5rem;
+  }
+
+  .utility-brand {
+    font-size: 0.66rem;
+  }
+
+  .utility-actions {
+    gap: 0.25rem;
+  }
+
+  .utility-action {
+    width: 2.45rem;
+    height: 2.45rem;
+  }
+
+  .utility-action svg {
+    width: 1.45rem;
+    height: 1.45rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

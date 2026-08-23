@@ -51,7 +51,7 @@ export function AboutView({ language }: { language: Language }) {
         ))}
         <a
           className="skill-badge featured-skills__more"
-          href="#skills"
+          href="/skills"
           aria-label={language === "en" ? "View all skills" : "전체 기술 보기"}
         >
           ...

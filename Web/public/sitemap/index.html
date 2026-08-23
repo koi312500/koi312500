@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="A private navigation index for Geonwoo Kim's portfolio and public services."
+    />
+    <meta name="theme-color" content="#171717" />
+    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.getItem("portfolio-theme") === "dark" ? "dark" : "light";
+      if (window.location.pathname === "/sitemap/") {
+        window.history.replaceState(null, "", "/sitemap");
+      }
+    </script>
+    <link rel="stylesheet" href="/utility/utility.css" />
+    <title>Site Map | Geonwoo Kim</title>
+    <style>
+      .map-section {
+        margin-top: 3rem;
+      }
+
+      .map-section:first-of-type {
+        margin-top: 2.5rem;
+      }
+
+      .map-section__heading {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin: 0 0 1.25rem;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 750;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .map-section__heading::after {
+        height: 1px;
+        content: "";
+        background: var(--line);
+        flex: 1;
+      }
+
+      .map-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem 1.5rem;
+      }
+
+      .map-card {
+        position: relative;
+        display: grid;
+        gap: 0.35rem;
+        min-height: 6.5rem;
+        padding: 1.15rem 1.25rem;
+        color: var(--ink);
+        text-decoration: none;
+        background: color-mix(in srgb, var(--panel) 92%, #d9d9d9 8%);
+        border: 1px solid var(--line);
+        align-content: center;
+      }
+
+      .map-card::before {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 0.1875rem;
+        content: "";
+        background: var(--accent);
+        opacity: 0;
+        transition: opacity 160ms ease;
+      }
+
+      .map-card:hover::before,
+      .map-card:focus-visible::before {
+        opacity: 1;
+      }
+
+      .map-card:focus-visible {
+        outline: 3px solid color-mix(in srgb, var(--accent) 62%, transparent);
+        outline-offset: 4px;
+      }
+
+      .map-card strong {
+        font-size: 1rem;
+      }
+
+      .map-card span {
+        color: var(--muted);
+        font-size: 0.72rem;
+        line-height: 1.5;
+      }
+
+      .map-card .service-address {
+        color: var(--accent-strong);
+        font-size: 0.66rem;
+        font-weight: 650;
+        letter-spacing: 0.025em;
+      }
+
+      @media (max-width: 640px) {
+        .map-grid {
+          grid-template-columns: 1fr;
+          gap: 0.8rem;
+        }
+
+        .map-card {
+          min-height: 5.5rem;
+        }
+      }
+    </style>
+    <script src="/utility/utility.js" defer></script>
+  </head>
+  <body
+    data-title-en="Site Map | Geonwoo Kim"
+    data-title-ko="사이트 맵 | 김건우"
+    data-description-en="A private navigation index for Geonwoo Kim's portfolio and public services."
+    data-description-ko="김건우의 포트폴리오와 공개 서비스를 모아 둔 숨은 탐색 페이지입니다."
+  >
+    <main class="utility-shell">
+      <header class="utility-topbar">
+        <a class="utility-brand" href="/about">KOI3125</a>
+        <div class="utility-actions">
+          <button
+            class="utility-action utility-action--language"
+            type="button"
+            data-language-toggle
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m5 8 6 6" />
+              <path d="m4 14 6-6 2-3" />
+              <path d="M2 5h12" />
+              <path d="M7 2h1" />
+              <path d="m22 22-5-10-5 10" />
+              <path d="M14 18h6" />
+            </svg>
+          </button>
+          <button
+            class="utility-action utility-action--theme"
+            type="button"
+            data-theme-toggle
+          >
+            <svg data-theme-icon="light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg data-theme-icon="dark" viewBox="0 0 24 24" aria-hidden="true" hidden>
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="utility-heading">
+        <p class="utility-kicker" data-language="en">Site Map</p>
+        <p class="utility-kicker" data-language="ko" hidden>사이트 맵</p>
+      </div>
+      <h1 class="utility-title" data-language="en">The cake is a lie.</h1>
+      <h1 class="utility-title" data-language="ko" hidden>The cake is a lie.</h1>
+      <p class="utility-lede" data-language="en">
+        A collection of sites run by KOI3125.
+      </p>
+      <p class="utility-lede" data-language="ko" hidden>
+        KOI3125가 굴리고 있는 여러 사이트들을 모아뒀어요.
+      </p>
+
+      <section class="map-section" aria-labelledby="pages-heading">
+        <h2 class="map-section__heading" id="pages-heading">
+          <span data-language="en">Portfolio</span>
+          <span data-language="ko" hidden>Portfolio</span>
+        </h2>
+        <nav class="map-grid" aria-label="Site map">
+          <a class="map-card" href="/about">
+            <strong>About</strong>
+            <span data-language="en">Profile, contact, and education</span>
+            <span data-language="ko" hidden>소개, 연락처 및 교육</span>
+          </a>
+          <a class="map-card" href="/skills">
+            <strong>Skills</strong>
+            <span data-language="en">Languages and engineering tools</span>
+            <span data-language="ko" hidden>기술 및 개발 도구</span>
+          </a>
+          <a class="map-card" href="/works">
+            <strong>Works</strong>
+            <span data-language="en">Projects, research, and problem solving</span>
+            <span data-language="ko" hidden>프로젝트, 연구 및 문제 해결</span>
+          </a>
+          <a class="map-card" href="/timeline">
+            <strong>Timeline</strong>
+            <span data-language="en">Activities and milestones</span>
+            <span data-language="ko" hidden>활동과 주요 이력</span>
+          </a>
+          <a class="map-card" href="/resume.pdf">
+            <strong data-language="en">Resume</strong>
+            <strong data-language="ko" hidden>이력서</strong>
+            <span data-language="en">Public resume in PDF format</span>
+            <span data-language="ko" hidden>PDF 형식의 공개 이력서</span>
+          </a>
+          <a class="map-card" href="/privacy/">
+            <strong data-language="en">Privacy</strong>
+            <strong data-language="ko" hidden>개인정보 활용 안내</strong>
+            <span data-language="en">Privacy and local preference information</span>
+            <span data-language="ko" hidden>개인정보 및 로컬 설정 안내</span>
+          </a>
+        </nav>
+      </section>
+
+      <section class="map-section" aria-labelledby="services-heading">
+        <h2 class="map-section__heading" id="services-heading">
+          <span data-language="en">Services</span>
+          <span data-language="ko" hidden>서비스</span>
+        </h2>
+        <div class="map-grid">
+          <a class="map-card" href="/gallery">
+            <strong data-language="en">KOI Art Archive</strong>
+            <strong data-language="ko" hidden>코이 그림 저장소</strong>
+            <span data-language="en">Artwork, artists, dates, and archive numbers</span>
+            <span data-language="ko" hidden>그림, 작가, 받은 날짜 및 기록 번호</span>
+          </a>
+          <a
+            class="map-card"
+            href="https://ep.koi3125.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <strong data-language="en">Ep - Fishing Game</strong>
+            <strong data-language="ko" hidden>이프 - 낚시 게임</strong>
+            <span data-language="en">An online fishing game that hooks you back</span>
+            <span data-language="ko" hidden>당신을 낚는 온라인 낚시 게임</span>
+            <span class="service-address">ep.koi3125.com</span>
+          </a>
+          <a
+            class="map-card"
+            href="https://game.koi3125.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <strong>ALTAIR - to the Earth</strong>
+            <span data-language="en">A choice-driven story set in a lunar city</span>
+            <span data-language="ko" hidden>월면도시를 배경으로 한 선택형 스토리 게임</span>
+            <span class="service-address">game.koi3125.com</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>

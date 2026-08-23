@@ -51,15 +51,47 @@ const metadata: Record<Language, Record<ViewId, ViewMetadata>> = {
   },
 };
 
-export function readView(hash: string): ViewId {
-  const candidate = hash.replace(/^#/, "").toLowerCase().split("/")[0];
-  if (candidate === "projects") return "works";
+function normalizedSegments(value: string): string[] {
+  const segments = value
+    .replace(/^#/, "")
+    .split(/[/?#]/)
+    .map((segment) => segment.trim().toLowerCase())
+    .filter(Boolean);
+
+  if (segments[0] === "koi312500") segments.shift();
+  return segments;
+}
+
+function routeSegments(pathname: string, hash = ""): string[] {
+  const hashSegments = normalizedSegments(hash);
+  const hashView = hashSegments[0] === "projects" ? "works" : hashSegments[0];
+  if (viewIds.includes(hashView as ViewId)) return [hashView, ...hashSegments.slice(1)];
+
+  const pathSegments = normalizedSegments(pathname);
+  if (pathSegments.length === 0) return ["about"];
+  if (pathSegments[0] === "projects") pathSegments[0] = "works";
+  return pathSegments;
+}
+
+export function readView(pathname: string, hash = ""): ViewId {
+  const [candidate] = routeSegments(pathname, hash);
   return viewIds.includes(candidate as ViewId) ? (candidate as ViewId) : "about";
 }
 
-export function readProjectId(hash: string): string | null {
-  const [view, projectId] = hash.replace(/^#/, "").toLowerCase().split("/");
-  return (view === "works" || view === "projects") && projectId ? projectId : null;
+export function readProjectId(pathname: string, hash = ""): string | null {
+  const [view, projectId] = routeSegments(pathname, hash);
+  return view === "works" && projectId ? projectId : null;
+}
+
+export function portfolioPath(view: ViewId, projectId?: string | null): string {
+  return view === "works" && projectId ? `/works/${projectId}` : `/${view}`;
+}
+
+export function canonicalPortfolioPath(pathname: string, hash = ""): string | null {
+  const segments = routeSegments(pathname, hash);
+  const view = segments[0];
+  if (!viewIds.includes(view as ViewId)) return null;
+  return portfolioPath(view as ViewId, view === "works" ? segments[1] : null);
 }
 
 export function viewMeta(view: ViewId, language: Language): ViewMetadata {

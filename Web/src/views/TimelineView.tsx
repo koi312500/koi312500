@@ -11,7 +11,7 @@ function WorkLink({ item, language }: { item: TimelineItem; language: Language }
   if (!item.projectId) return null;
 
   return (
-    <a className="timeline-project-link" href={`#works/${item.projectId}`}>
+    <a className="timeline-project-link" href={`/works/${item.projectId}`}>
       {language === "en" ? "View details" : "자세히 보기"}
       <ArrowRight aria-hidden="true" />
     </a>
@@ -80,7 +80,7 @@ function AllTimeline({ language, items }: { language: Language; items: TimelineI
 }
 
 export function TimelineView({ language }: { language: Language }) {
-  const [mode, setMode] = useState<TimelineMode>("grouped");
+  const [mode, setMode] = useState<TimelineMode>("all");
   const sortedTimeline = useMemo(
     () => [...timeline].sort((left, right) => right.sortOrder - left.sortOrder),
     [],

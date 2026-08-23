@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { AppShell } from "./components/AppShell";
-import { readView, viewMeta, type Language, type ViewId } from "./lib/navigation";
+import {
+  canonicalPortfolioPath,
+  readView,
+  viewMeta,
+  type Language,
+  type ViewId,
+} from "./lib/navigation";
 import { AboutView } from "./views/AboutView";
 import { WorksView } from "./views/WorksView";
 import { SkillsView } from "./views/SkillsView";
@@ -17,14 +23,56 @@ function storedTheme(): Theme {
 }
 
 export default function App() {
-  const [view, setView] = useState<ViewId>(() => readView(window.location.hash));
+  const [view, setView] = useState<ViewId>(() =>
+    readView(window.location.pathname, window.location.hash),
+  );
   const [language, setLanguage] = useState<Language>(storedLanguage);
   const [theme, setTheme] = useState<Theme>(storedTheme);
 
   useEffect(() => {
-    const onHashChange = () => setView(readView(window.location.hash));
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    const syncRoute = () => {
+      const canonicalPath = canonicalPortfolioPath(
+        window.location.pathname,
+        window.location.hash,
+      );
+      if (canonicalPath && `${window.location.pathname}${window.location.hash}` !== canonicalPath) {
+        window.history.replaceState(null, "", canonicalPath);
+      }
+      setView(readView(window.location.pathname, window.location.hash));
+    };
+
+    const onDocumentClick = (event: MouseEvent) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+
+      const anchor = (event.target as Element | null)?.closest<HTMLAnchorElement>("a[href]");
+      if (!anchor || anchor.target || anchor.hasAttribute("download")) return;
+
+      const destination = new URL(anchor.href, window.location.href);
+      if (destination.origin !== window.location.origin) return;
+      const canonicalPath = canonicalPortfolioPath(destination.pathname, destination.hash);
+      if (!canonicalPath) return;
+
+      event.preventDefault();
+      window.history.pushState(null, "", canonicalPath);
+      window.dispatchEvent(new PopStateEvent("popstate"));
+    };
+
+    syncRoute();
+    window.addEventListener("popstate", syncRoute);
+    document.addEventListener("click", onDocumentClick);
+    return () => {
+      window.removeEventListener("popstate", syncRoute);
+      document.removeEventListener("click", onDocumentClick);
+    };
   }, []);
 
   useEffect(() => {

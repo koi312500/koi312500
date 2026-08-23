@@ -1,6 +1,7 @@
-import { Languages, Moon, Sun } from "lucide-react";
+import { Globe2, Languages, Moon, Sun } from "lucide-react";
 import type { Language } from "../lib/navigation";
 import type { ViewId } from "../lib/navigation";
+import profileImage from "../../kyungsol_KOI3125_Paint23.png";
 
 type BrandHeaderProps = {
   language: Language;
@@ -20,8 +21,10 @@ export function BrandHeader({
   return (
     <header className="topbar">
       {activeView !== "about" ? (
-        <a className="brand-lockup" href="#about" aria-label="About Geonwoo Kim">
-          <span className="brand-avatar" aria-hidden="true" />
+        <a className="brand-lockup" href="/about" aria-label="About Geonwoo Kim">
+          <span className="brand-avatar" aria-hidden="true">
+            <img src={profileImage} alt="" />
+          </span>
           <strong>KIM GEON WOO</strong>
           <span>{language === "en" ? "Developer portfolio" : "김건우 개발자 포트폴리오"}</span>
         </a>
@@ -41,6 +44,13 @@ export function BrandHeader({
             src={`${import.meta.env.BASE_URL}github-mark.svg`}
             alt=""
           />
+        </a>
+        <a
+          className="icon-action"
+          href="/sitemap"
+          aria-label={language === "en" ? "Site map" : "사이트 맵"}
+        >
+          <Globe2 aria-hidden="true" />
         </a>
         <button
           className="icon-action"
