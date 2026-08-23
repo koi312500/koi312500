@@ -1,20 +1,20 @@
 import {
-  CakeSlice,
   ExternalLink,
   GraduationCap,
   House,
   Mail,
   MapPin,
+  PartyPopper,
 } from "lucide-react";
 import { details, featuredSkills, intro } from "../data/content";
 import type { Language } from "../lib/navigation";
 import type { DetailItem } from "../types";
 import { SkillBadge } from "../components/SkillBadge";
-import profileImage from "../../KOI3125_profile.png";
+import profileImage from "../../kyungsol_KOI3125_Paint23.png";
 
 const iconMap = {
   location: MapPin,
-  birthday: CakeSlice,
+  birthday: PartyPopper,
   email: Mail,
   education: GraduationCap,
   website: House,
@@ -49,6 +49,13 @@ export function AboutView({ language }: { language: Language }) {
         {featuredSkills.map((skill) => (
           <SkillBadge {...skill} key={skill.label} />
         ))}
+        <a
+          className="skill-badge featured-skills__more"
+          href="#skills"
+          aria-label={language === "en" ? "View all skills" : "전체 기술 보기"}
+        >
+          ...
+        </a>
       </div>
 
       <div className="detail-grid">

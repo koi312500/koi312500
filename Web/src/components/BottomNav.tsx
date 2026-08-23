@@ -11,10 +11,10 @@ const items: Array<{
   icon: typeof UserRound;
   label: Record<Language, string>;
 }> = [
-  { id: "about", icon: UserRound, label: { en: "About", ko: "소개" } },
-  { id: "skills", icon: Hammer, label: { en: "Skills", ko: "기술" } },
-  { id: "projects", icon: Box, label: { en: "Projects", ko: "프로젝트" } },
-  { id: "timeline", icon: CalendarClock, label: { en: "Timeline", ko: "타임라인" } },
+  { id: "about", icon: UserRound, label: { en: "About", ko: "About" } },
+  { id: "skills", icon: Hammer, label: { en: "Skills", ko: "Skills" } },
+  { id: "projects", icon: Box, label: { en: "Projects", ko: "Projects" } },
+  { id: "timeline", icon: CalendarClock, label: { en: "Timeline", ko: "Timeline" } },
 ];
 
 export function BottomNav({ activeView, language }: BottomNavProps) {

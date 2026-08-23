@@ -52,8 +52,13 @@ const metadata: Record<Language, Record<ViewId, ViewMetadata>> = {
 };
 
 export function readView(hash: string): ViewId {
-  const candidate = hash.replace(/^#/, "").toLowerCase();
+  const candidate = hash.replace(/^#/, "").toLowerCase().split("/")[0];
   return viewIds.includes(candidate as ViewId) ? (candidate as ViewId) : "about";
+}
+
+export function readProjectId(hash: string): string | null {
+  const [view, projectId] = hash.replace(/^#/, "").toLowerCase().split("/");
+  return view === "projects" && projectId ? projectId : null;
 }
 
 export function viewMeta(view: ViewId, language: Language): ViewMetadata {

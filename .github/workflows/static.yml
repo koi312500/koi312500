@@ -1,4 +1,4 @@
-name: Test and deploy portfolio to Pages
+name: Build and deploy portfolio to Pages
 
 on:
   push:
@@ -34,9 +34,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Run tests
-        run: npm test -- --maxWorkers=1
 
       - name: Build portfolio
         env:

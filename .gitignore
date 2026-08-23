@@ -3,6 +3,5 @@ Web/dist/
 Web/.vite/
 *.tsbuildinfo
 tmp/
-docs/
 .superpowers/
 .worktrees/

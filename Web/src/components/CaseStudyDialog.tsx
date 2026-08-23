@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { ExternalLink, X } from "lucide-react";
+import { ExternalLink, Trophy, X } from "lucide-react";
 import type { Language } from "../lib/navigation";
 import type { Project } from "../types";
 
@@ -15,6 +15,8 @@ export function CaseStudyDialog({
   language,
   onClose,
 }: CaseStudyDialogProps) {
+  const outcomeIsAward =
+    project.award?.[language] === project.outcome[language];
   const closeButton = useRef<HTMLButtonElement>(null);
   const dialog = useRef<HTMLElement>(null);
   const previousFocus = useRef<HTMLElement | null>(
@@ -75,18 +77,29 @@ export function CaseStudyDialog({
           type="button"
           onClick={onClose}
           ref={closeButton}
-          aria-label={language === "en" ? "Close case study" : "사례 연구 닫기"}
+          aria-label={
+            language === "en" ? "Close project details" : "프로젝트 상세 닫기"
+          }
         >
           <X aria-hidden="true" />
         </button>
         <p className="dialog-eyebrow">{project.category[language]}</p>
-        <h2 id="case-dialog-title">{project.title}</h2>
+        <h2 id="case-dialog-title">{project.title[language]}</h2>
         <div className="dialog-meta">
           <span>{project.role[language]}</span>
           <span>{project.period}</span>
         </div>
-        <p className="dialog-summary">{project.summary[language]}</p>
+        <div className="dialog-description">
+          <span>{language === "en" ? "Project overview" : "프로젝트 개요"}</span>
+          <p className="dialog-summary">{project.summary[language]}</p>
+        </div>
         <strong className="dialog-outcome">{project.outcome[language]}</strong>
+        {project.award && !outcomeIsAward ? (
+          <p className="dialog-award">
+            <Trophy aria-hidden="true" />
+            <span>{project.award[language]}</span>
+          </p>
+        ) : null}
         {project.details.map((detail, index) => (
           <p key={index}>{detail[language]}</p>
         ))}

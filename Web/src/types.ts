@@ -20,12 +20,14 @@ export type SkillGroup = {
 
 export type Project = {
   id: string;
-  title: string;
+  title: LocalizedText;
   period: string;
   category: LocalizedText;
   role: LocalizedText;
   summary: LocalizedText;
   outcome: LocalizedText;
+  cardOutcome?: Partial<LocalizedText>;
+  award?: LocalizedText;
   details: LocalizedText[];
   stack: string[];
   github?: string;
@@ -37,4 +39,5 @@ export type TimelineItem = {
   title: LocalizedText;
   category: LocalizedText;
   summary: LocalizedText;
+  projectId?: string;
 };

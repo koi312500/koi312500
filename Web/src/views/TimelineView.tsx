@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import { timeline } from "../data/content";
 import type { Language } from "../lib/navigation";
 
@@ -16,6 +17,15 @@ export function TimelineView({ language }: { language: Language }) {
               <span>{item.category[language]}</span>
               <h2>{item.title[language]}</h2>
               <p>{item.summary[language]}</p>
+              {item.projectId ? (
+                <a
+                  className="timeline-project-link"
+                  href={`#projects/${item.projectId}`}
+                >
+                  {language === "en" ? "View project" : "프로젝트 보기"}
+                  <ArrowRight aria-hidden="true" />
+                </a>
+              ) : null}
             </article>
           </li>
         ))}

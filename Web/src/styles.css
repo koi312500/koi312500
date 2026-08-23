@@ -80,6 +80,11 @@ a:focus-visible {
   overflow: hidden;
 }
 
+.page-shell--projects,
+.page-shell--timeline {
+  height: 100dvh;
+}
+
 .page-shell::before {
   position: fixed;
   z-index: -1;
@@ -219,7 +224,7 @@ a:focus-visible {
   width: 5.8125rem;
   aspect-ratio: 1;
   overflow: hidden;
-  background: #d9d9d9;
+  background: #fff;
   border-radius: 0.5rem;
   box-shadow: none;
 }
@@ -228,6 +233,8 @@ a:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(2.35);
+  transform-origin: 49% 55%;
 }
 
 .name-line {
@@ -287,10 +294,26 @@ a:focus-visible {
   background: var(--accent);
 }
 
-.featured-skills .skill-badge {
+.featured-skills .skill-badge,
+.skills-view .skill-badge {
   min-height: 1.3125rem;
   padding: 0.125rem 0.5rem;
   font-size: 0.8125rem;
+}
+
+.featured-skills__more {
+  min-width: 2.4rem;
+  justify-content: center;
+  color: var(--muted);
+  text-decoration: none;
+  border-color: var(--line);
+}
+
+.featured-skills__more:hover,
+.featured-skills__more:focus-visible {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border-color: var(--accent);
 }
 
 .detail-grid {
@@ -382,6 +405,17 @@ a.detail-item:hover span {
   transition: width 180ms ease;
 }
 
+@media (min-width: 681px) {
+  .bottom-nav {
+    transform: translateY(-0.5rem);
+  }
+
+  .page-shell--projects .main-stage,
+  .page-shell--timeline .main-stage {
+    margin-bottom: 2.25rem;
+  }
+}
+
 .nav-link svg {
   width: 1.05rem;
   height: 1.05rem;
@@ -468,34 +502,80 @@ footer {
   gap: 0.375rem 0.5rem;
 }
 
-.skills-view .skill-badge {
-  min-height: 1.75rem;
-  padding: 0.25rem 0.625rem;
-  font-size: 1rem;
-}
-
 .page-shell--projects .main-stage {
   align-items: start;
+  min-height: 0;
   padding-top: clamp(7rem, 22.5vh, 15.1875rem);
+  overflow: hidden;
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 1.75rem;
-  row-gap: 1.5rem;
+  column-gap: 0.875rem;
+  row-gap: 1rem;
+}
+
+.project-groups {
+  display: grid;
+  gap: 2rem;
+  padding-bottom: 0.25rem;
+}
+
+.project-group {
+  min-width: 0;
+}
+
+.project-group__header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.project-group__header::after {
+  min-width: 2rem;
+  height: 1px;
+  content: "";
+  background: color-mix(in srgb, var(--accent) 34%, transparent);
+  flex: 1;
+}
+
+.project-group__header h2 {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-group__header span {
+  color: var(--muted);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .projects-view {
   width: 100%;
-  max-width: 34.25rem;
+  height: 100%;
+  max-width: 55rem;
   margin-inline: auto;
+  padding-right: 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: color-mix(in srgb, var(--accent) 45%, transparent) transparent;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
 }
 
 .project-card {
   position: relative;
   display: block;
-  height: 8.125rem;
+  min-height: 13rem;
   overflow: hidden;
   background: color-mix(in srgb, var(--panel) 92%, #d9d9d9 8%);
   border: 1px solid var(--line);
@@ -519,8 +599,16 @@ footer {
 }
 
 .project-card:hover::before,
-.project-card:focus-within::before {
+.project-card:focus-within::before,
+.project-card.is-highlighted::before {
   opacity: 1;
+}
+
+.project-card.is-highlighted {
+  background: color-mix(in srgb, var(--accent) 8%, var(--panel));
+  border-color: color-mix(in srgb, var(--accent) 72%, var(--line));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent);
+  scroll-margin-block: 3rem;
 }
 
 .project-card__body {
@@ -528,7 +616,7 @@ footer {
   flex-direction: column;
   height: 100%;
   min-width: 0;
-  padding: 0.75rem 0.875rem;
+  padding: 0.875rem 1rem;
 }
 
 .project-card__meta {
@@ -536,7 +624,7 @@ footer {
   grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 0.5rem;
   color: var(--muted);
-  font-size: 0.5rem;
+  font-size: 0.625rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -554,8 +642,22 @@ footer {
 }
 
 .project-card h2 {
-  margin: 0.375rem 0 0.25rem;
-  font-size: 0.9375rem;
+  margin: 0.4375rem 0 0.3125rem;
+  font-size: 1.0625rem;
+}
+
+.project-card__description {
+  min-width: 0;
+}
+
+.project-card__description > span {
+  display: block;
+  margin-bottom: 0.1875rem;
+  color: var(--accent-strong);
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .project-card__summary {
@@ -563,10 +665,55 @@ footer {
   margin: 0;
   overflow: hidden;
   color: var(--muted);
-  font-size: 0.6875rem;
-  line-height: 1.45;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+
+.project-card__result {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line));
+}
+
+.project-card__result > span {
+  padding-top: 0.0625rem;
+  color: var(--accent-strong);
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-card__result p {
+  display: flex;
+  gap: 0.375rem;
+  align-items: flex-start;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.71875rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.project-card__result p span {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.project-card__result svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  height: 0.75rem;
+  margin-top: 0.0625rem;
+  color: var(--accent-strong);
 }
 
 .project-card__footer {
@@ -584,7 +731,7 @@ footer {
   align-items: center;
   padding: 0;
   color: var(--ink);
-  font-size: 0.5625rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
@@ -662,6 +809,27 @@ footer {
   font-size: 0.78rem;
 }
 
+.dialog-description {
+  padding: 0.9rem 1rem;
+  background: color-mix(in srgb, var(--panel) 90%, var(--accent) 10%);
+  border-left: 3px solid var(--accent);
+}
+
+.dialog-description > span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--accent-strong);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.dialog-description .dialog-summary {
+  margin: 0;
+  color: var(--ink);
+}
+
 .case-dialog p {
   color: var(--muted);
   font-size: 0.95rem;
@@ -674,6 +842,25 @@ footer {
   padding-left: 1rem;
   color: var(--accent-strong);
   border-left: 4px solid var(--accent);
+}
+
+.dialog-award {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  margin: -0.55rem 0 1.4rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.dialog-award svg {
+  width: 0.9rem;
+  min-width: 0.9rem;
+  height: 0.9rem;
+  margin-top: 0.1rem;
+  color: var(--accent-strong);
 }
 
 .dialog-stack {
@@ -714,20 +901,29 @@ footer {
 
 .page-shell--timeline .main-stage {
   align-items: start;
+  min-height: 0;
   padding-top: clamp(6rem, 17vh, 11.5rem);
+  overflow: hidden;
 }
 
 .timeline-view {
   width: 100%;
-  max-width: var(--reference-nav-width);
+  height: 100%;
+  max-width: 55rem;
   margin-inline: auto;
+  padding-right: 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: color-mix(in srgb, var(--accent) 45%, transparent) transparent;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
 }
 
 .timeline-list::before {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 8.95rem;
+  left: calc(10.7375rem - 0.5px);
   width: 1px;
   content: "";
   background: color-mix(in srgb, var(--accent) 32%, transparent);
@@ -736,7 +932,7 @@ footer {
 .timeline-list li {
   position: relative;
   display: grid;
-  grid-template-columns: 7.5rem 1.3rem minmax(0, 1fr);
+  grid-template-columns: 9.5rem 1.3rem minmax(0, 1fr);
   gap: 0.8rem;
   padding-bottom: 1.8rem;
 }
@@ -747,13 +943,14 @@ footer {
   font-size: 0.78rem;
   font-weight: 600;
   text-align: right;
+  white-space: nowrap;
 }
 
 .timeline-marker {
   z-index: 1;
   width: 0.875rem;
   height: 0.875rem;
-  margin-top: 0.05rem;
+  margin-top: 0.3rem;
   background: var(--canvas);
   border: 2px solid var(--accent);
   border-radius: 999px;
@@ -779,9 +976,36 @@ footer {
   line-height: 1.65;
 }
 
+.timeline-project-link {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  margin-top: 0.55rem;
+  color: var(--accent-strong);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.timeline-project-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.timeline-project-link svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
 @media (max-width: 900px) {
   .page-shell {
     overflow: visible;
+  }
+
+  .page-shell--projects,
+  .page-shell--timeline {
+    height: auto;
   }
 
   .page-shell--about .main-stage,
@@ -790,6 +1014,19 @@ footer {
   .page-shell--timeline .main-stage {
     padding-top: clamp(5rem, 14vh, 8rem);
     padding-bottom: 4rem;
+  }
+
+  .page-shell--projects .main-stage,
+  .page-shell--timeline .main-stage {
+    overflow-y: visible;
+  }
+
+  .projects-view,
+  .timeline-view {
+    height: auto;
+    max-width: 53.75rem;
+    padding-right: 0;
+    overflow: visible;
   }
 
   .identity-row {
@@ -897,11 +1134,6 @@ footer {
     font-size: 0.72rem;
   }
 
-  .skills-view .skill-badge {
-    min-height: 1.85rem;
-    font-size: 0.8rem;
-  }
-
   .detail-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -933,12 +1165,12 @@ footer {
   }
 
   .project-card h2 {
-    font-size: 1rem;
+    font-size: 1.0625rem;
   }
 
   .project-card p {
-    font-size: 0.72rem;
-    line-height: 1.65;
+    font-size: 0.8125rem;
+    line-height: 1.55;
   }
 
   .project-card__footer button,
@@ -947,7 +1179,7 @@ footer {
   }
 
   .timeline-list::before {
-    left: 0.45rem;
+    left: calc(0.4375rem - 0.5px);
   }
 
   .timeline-list li {
@@ -959,6 +1191,7 @@ footer {
     grid-column: 2;
     grid-row: 1;
     text-align: left;
+    white-space: normal;
   }
 
   .timeline-marker {
