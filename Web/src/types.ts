@@ -38,7 +38,8 @@ export type TimelineItem = {
   period: string;
   title: LocalizedText;
   category: LocalizedText;
-  kind: "project" | "research" | "problem-solving" | "leadership" | "education";
+  kind: "education" | "problem-solving" | "research" | "project" | "leadership";
+  cvOrder: number;
   sortOrder: number;
   summary: LocalizedText;
   projectId?: string;

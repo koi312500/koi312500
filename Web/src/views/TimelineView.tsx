@@ -12,7 +12,7 @@ function WorkLink({ item, language }: { item: TimelineItem; language: Language }
 
   return (
     <a className="timeline-project-link" href={`#works/${item.projectId}`}>
-      {language === "en" ? "View work" : "Works에서 보기"}
+      {language === "en" ? "View details" : "자세히 보기"}
       <ArrowRight aria-hidden="true" />
     </a>
   );
@@ -24,7 +24,7 @@ function GroupedTimeline({ language }: { language: Language }) {
       {timelineGroups.map((group) => {
         const items = timeline
           .filter((item) => item.kind === group.id)
-          .sort((left, right) => right.sortOrder - left.sortOrder);
+          .sort((left, right) => left.cvOrder - right.cvOrder);
 
         if (items.length === 0) return null;
 
@@ -92,7 +92,7 @@ export function TimelineView({ language }: { language: Language }) {
         {language === "en" ? "Timeline" : "타임라인"}
       </h1>
       <nav
-        className="timeline-toolbar"
+        className={`timeline-toolbar timeline-toolbar--${mode}`}
         aria-label={language === "en" ? "Timeline view" : "타임라인 보기"}
       >
         <button

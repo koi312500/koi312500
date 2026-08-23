@@ -298,7 +298,7 @@
 
 #entry(
   [Pineapple Computer Club],
-  role: [President (2025)],
+  role: [President (2024)],
   subtitle: details(
     [Information Technology Club],
     [Revitalized a long-running school club],

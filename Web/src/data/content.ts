@@ -416,6 +416,7 @@ export const timeline: TimelineItem[] = [
     title: { en: "DGIST undergraduate studies", ko: "DGIST 학부 과정" },
     category: { en: "Education", ko: "교육" },
     kind: "education",
+    cvOrder: 1,
     sortOrder: 202611,
     summary: {
       en: "School of Undergraduate Studies; GPA 4.21 / 4.30, with interests across computing, mathematics, and research.",
@@ -427,6 +428,7 @@ export const timeline: TimelineItem[] = [
     title: { en: "UCPC 2026 Final Round", ko: "UCPC 2026 본선" },
     category: { en: "Problem Solving", ko: "Problem Solving" },
     kind: "problem-solving",
+    cvOrder: 1,
     sortOrder: 202607,
     summary: {
       en: "Placed 28th of 60 finalist teams after advancing from a 149-team preliminary field.",
@@ -438,6 +440,7 @@ export const timeline: TimelineItem[] = [
     title: { en: "Ep - Fishing Game", ko: "이프 - 낚시게임" },
     category: { en: "Project", ko: "Project" },
     kind: "project",
+    cvOrder: 1,
     sortOrder: 202610,
     summary: {
       en: "Developing and operating a production fishing game used by 400,000+ people across 53,000+ communities.",
@@ -450,6 +453,7 @@ export const timeline: TimelineItem[] = [
     title: { en: "Daejeon Science High School", ko: "대전과학고등학교" },
     category: { en: "Education", ko: "교육" },
     kind: "education",
+    cvOrder: 2,
     sortOrder: 202601,
     summary: {
       en: "Completed high school with a 3.70 / 4.30 GPA while pursuing research, software, and competitive programming.",
@@ -461,10 +465,11 @@ export const timeline: TimelineItem[] = [
     title: { en: "Pineapple Computer Club", ko: "파인애플 정보동아리" },
     category: { en: "Leadership", ko: "Leadership" },
     kind: "leadership",
+    cvOrder: 1,
     sortOrder: 202508,
     summary: {
-      en: "Served as president in 2025 and revitalized the long-running school computer club through broader projects and activities.",
-      ko: "2025년 회장을 맡아 오랜 역사의 교내 정보동아리를 다양한 프로젝트와 활동 중심으로 활성화했습니다.",
+      en: "Served as president in 2024 and revitalized the long-running school computer club through broader projects and activities.",
+      ko: "2024년 회장을 맡아 오랜 역사의 교내 정보동아리를 다양한 프로젝트와 활동 중심으로 활성화했습니다.",
     },
   },
   {
@@ -475,6 +480,7 @@ export const timeline: TimelineItem[] = [
     },
     category: { en: "Research", ko: "Research" },
     kind: "research",
+    cvOrder: 1,
     sortOrder: 202511,
     summary: {
       en: "Proposed SCQ and evaluated Korean LLM quantization up to 12.8B parameters, including memory and reasoning trade-offs.",
@@ -487,6 +493,7 @@ export const timeline: TimelineItem[] = [
     title: { en: "Korea Olympiad in Informatics", ko: "한국정보올림피아드" },
     category: { en: "Problem Solving", ko: "Problem Solving" },
     kind: "problem-solving",
+    cvOrder: 2,
     sortOrder: 202512,
     summary: {
       en: "Earned four consecutive National Silver Prizes, two Regional Grand Prizes, and additional high-school division awards.",
@@ -498,6 +505,7 @@ export const timeline: TimelineItem[] = [
     title: { en: "Infomaker", ko: "Infomaker" },
     category: { en: "Leadership", ko: "Leadership" },
     kind: "leadership",
+    cvOrder: 2,
     sortOrder: 202412,
     summary: {
       en: "Founded and led the school's first algorithm problem-solving club, teaching and supporting about 20 students.",
@@ -512,6 +520,7 @@ export const timeline: TimelineItem[] = [
     },
     category: { en: "Problem Solving", ko: "Problem Solving" },
     kind: "problem-solving",
+    cvOrder: 4,
     sortOrder: 202502,
     summary: {
       en: "Created a repeatable student-run contest series and led its planning, problem setting, review, and BOJ operations.",
@@ -527,6 +536,7 @@ export const timeline: TimelineItem[] = [
     },
     category: { en: "Project", ko: "Project" },
     kind: "project",
+    cvOrder: 2,
     sortOrder: 202506,
     summary: {
       en: "Led a multilingual support platform for foreign workers; received an Honorable Mention at an AI convergence hackathon.",
@@ -542,6 +552,7 @@ export const timeline: TimelineItem[] = [
     },
     category: { en: "Research", ko: "Research" },
     kind: "research",
+    cvOrder: 3,
     sortOrder: 202510,
     summary: {
       en: "Applied MMPI-2 to several language models and compared their scale scores and response biases.",
@@ -557,6 +568,7 @@ export const timeline: TimelineItem[] = [
     },
     category: { en: "Research", ko: "Research" },
     kind: "research",
+    cvOrder: 2,
     sortOrder: 202501,
     summary: {
       en: "Led 33 controlled reconstruction experiments; received the Grand Prize and Minister of Science and ICT Award.",
@@ -572,6 +584,7 @@ export const timeline: TimelineItem[] = [
     },
     category: { en: "Project", ko: "Project" },
     kind: "project",
+    cvOrder: 3,
     sortOrder: 202411,
     summary: {
       en: "Led an AI-assisted browser accessibility project that received a Bronze Prize in a national software competition.",
@@ -587,6 +600,7 @@ export const timeline: TimelineItem[] = [
     },
     category: { en: "Project", ko: "Project" },
     kind: "project",
+    cvOrder: 4,
     sortOrder: 202409,
     summary: {
       en: "Built a mobile indoor navigation program that guides visually impaired users with spoken directions and elevator-prioritized accessible routes.",
@@ -602,6 +616,7 @@ export const timeline: TimelineItem[] = [
     },
     category: { en: "Research", ko: "Research" },
     kind: "research",
+    cvOrder: 4,
     sortOrder: 202410,
     summary: {
       en: "Explored img2img, inpainting, and ControlNet for structurally guided cultural-heritage restoration.",
@@ -610,10 +625,11 @@ export const timeline: TimelineItem[] = [
     projectId: "stable-diffusion",
   },
   {
-    period: "2024",
+    period: "Oct 2024",
     title: { en: "Nexon Youth Programming Challenge", ko: "넥슨 청소년 프로그래밍 챌린지" },
     category: { en: "Problem Solving", ko: "Problem Solving" },
     kind: "problem-solving",
+    cvOrder: 3,
     sortOrder: 202408,
     summary: {
       en: "Reached the finals in the NYPC 15-19 Division.",
@@ -625,6 +641,7 @@ export const timeline: TimelineItem[] = [
     title: { en: "Information Technology Gifted Education", ko: "정보영재교육" },
     category: { en: "Project", ko: "Project" },
     kind: "project",
+    cvOrder: 5,
     sortOrder: 202012,
     summary: {
       en: "Built a C++ typing tutor, a Python vocabulary tool, and a KoGPT2 conversational bot.",

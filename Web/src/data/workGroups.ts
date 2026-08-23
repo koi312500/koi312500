@@ -22,12 +22,12 @@ export const timelineGroups: Array<{
   id: TimelineItem["kind"];
   title: LocalizedText;
 }> = [
-  { id: "project", title: { en: "Project", ko: "Project" } },
-  { id: "research", title: { en: "Research", ko: "Research" } },
+  { id: "education", title: { en: "Education", ko: "Education" } },
   {
     id: "problem-solving",
     title: { en: "Problem Solving", ko: "Problem Solving" },
   },
+  { id: "research", title: { en: "Research", ko: "Research" } },
+  { id: "project", title: { en: "Project", ko: "Project" } },
   { id: "leadership", title: { en: "Leadership", ko: "Leadership" } },
-  { id: "education", title: { en: "Education", ko: "Education" } },
 ];
