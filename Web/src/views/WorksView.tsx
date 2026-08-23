@@ -2,35 +2,18 @@ import { useEffect, useState } from "react";
 import { CaseStudyDialog } from "../components/CaseStudyDialog";
 import { ProjectCard } from "../components/ProjectCard";
 import { projects } from "../data/content";
+import { workGroups } from "../data/workGroups";
 import { readProjectId, type Language } from "../lib/navigation";
 import type { Project } from "../types";
 
-const projectGroups = [
-  {
-    id: "project",
-    title: { en: "Project", ko: "Project" },
-    projectIds: ["ep", "sangsaeng", "snowmix", "arkit"],
-  },
-  {
-    id: "research",
-    title: { en: "Research", ko: "Research" },
-    projectIds: ["scq", "gpt-mmpi2", "3dgs", "stable-diffusion"],
-  },
-  {
-    id: "problem-solving",
-    title: { en: "Problem Solving", ko: "Problem Solving" },
-    projectIds: ["dshstack"],
-  },
-] as const;
-
 const projectById = new Map(projects.map((project) => [project.id, project]));
 const projectNumberById = new Map<string, number>(
-  projectGroups
+  workGroups
     .flatMap((group) => group.projectIds)
     .map((projectId, index) => [projectId, index + 1]),
 );
 
-export function ProjectsView({ language }: { language: Language }) {
+export function WorksView({ language }: { language: Language }) {
   const [selected, setSelected] = useState<Project | null>(null);
   const [highlightedProjectId, setHighlightedProjectId] = useState(() =>
     readProjectId(window.location.hash),
@@ -55,12 +38,12 @@ export function ProjectsView({ language }: { language: Language }) {
   }, [highlightedProjectId]);
 
   return (
-    <section className="projects-view" aria-labelledby="projects-title">
-      <h1 id="projects-title" className="sr-only">
-        {language === "en" ? "Projects" : "프로젝트"}
+    <section className="works-view" aria-labelledby="works-title">
+      <h1 id="works-title" className="sr-only">
+        Works
       </h1>
       <div className="project-groups">
-        {projectGroups.map((group) => {
+        {workGroups.map((group) => {
           const groupedProjects = group.projectIds
             .map((projectId) => projectById.get(projectId))
             .filter((project): project is Project => Boolean(project));
@@ -71,10 +54,10 @@ export function ProjectsView({ language }: { language: Language }) {
               aria-labelledby={`project-group-${group.id}`}
               key={group.id}
             >
-              <header className="project-group__header">
+              <header className="work-group-header">
                 <h2 id={`project-group-${group.id}`}>{group.title[language]}</h2>
                 <span>
-                  {String(groupedProjects.length).padStart(2, "0")} {language === "en" ? "projects" : "개 프로젝트"}
+                  {String(groupedProjects.length).padStart(2, "0")} {language === "en" ? "works" : "개 항목"}
                 </span>
               </header>
               <div className="project-grid">

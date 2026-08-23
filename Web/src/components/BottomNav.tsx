@@ -13,7 +13,7 @@ const items: Array<{
 }> = [
   { id: "about", icon: UserRound, label: { en: "About", ko: "About" } },
   { id: "skills", icon: Hammer, label: { en: "Skills", ko: "Skills" } },
-  { id: "projects", icon: Box, label: { en: "Projects", ko: "Projects" } },
+  { id: "works", icon: Box, label: { en: "Works", ko: "Works" } },
   { id: "timeline", icon: CalendarClock, label: { en: "Timeline", ko: "Timeline" } },
 ];
 

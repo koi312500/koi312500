@@ -303,7 +303,7 @@
     [Information Technology Club],
     [Revitalized a long-running school club],
   ),
-  date: [Apr 2024 - Aug 2026],
+  date: [Apr 2023 - Aug 2025],
   body: bullets((
     [Revitalized a long-running information technology club by organizing regular activities across programming, software projects, and broader computing topics.],
   )),

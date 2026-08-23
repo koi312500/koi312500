@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AppShell } from "./components/AppShell";
 import { readView, viewMeta, type Language, type ViewId } from "./lib/navigation";
 import { AboutView } from "./views/AboutView";
-import { ProjectsView } from "./views/ProjectsView";
+import { WorksView } from "./views/WorksView";
 import { SkillsView } from "./views/SkillsView";
 import { TimelineView } from "./views/TimelineView";
 
@@ -48,7 +48,7 @@ export default function App() {
     >
       {view === "about" ? <AboutView language={language} /> : null}
       {view === "skills" ? <SkillsView language={language} /> : null}
-      {view === "projects" ? <ProjectsView language={language} /> : null}
+      {view === "works" ? <WorksView language={language} /> : null}
       {view === "timeline" ? <TimelineView language={language} /> : null}
     </AppShell>
   );

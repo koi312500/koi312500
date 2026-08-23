@@ -415,15 +415,30 @@ export const timeline: TimelineItem[] = [
     period: "Feb 2026 - Present",
     title: { en: "DGIST undergraduate studies", ko: "DGIST 학부 과정" },
     category: { en: "Education", ko: "교육" },
+    kind: "education",
+    sortOrder: 202611,
     summary: {
       en: "School of Undergraduate Studies; GPA 4.21 / 4.30, with interests across computing, mathematics, and research.",
       ko: "School of Undergraduate Studies에서 GPA 4.21 / 4.30을 기록하며 컴퓨팅, 수학 및 연구 관심사를 확장하고 있습니다.",
     },
   },
   {
+    period: "2026",
+    title: { en: "UCPC 2026 Final Round", ko: "UCPC 2026 본선" },
+    category: { en: "Problem Solving", ko: "Problem Solving" },
+    kind: "problem-solving",
+    sortOrder: 202607,
+    summary: {
+      en: "Placed 28th of 60 finalist teams after advancing from a 149-team preliminary field.",
+      ko: "149개 예선 참가 팀 중 본선에 진출해 60개 본선 팀 가운데 28위를 기록했습니다.",
+    },
+  },
+  {
     period: "Feb 2022 - Present",
     title: { en: "Ep - Fishing Game", ko: "이프 - 낚시게임" },
     category: { en: "Project", ko: "Project" },
+    kind: "project",
+    sortOrder: 202610,
     summary: {
       en: "Developing and operating a production fishing game used by 400,000+ people across 53,000+ communities.",
       ko: "40만 명 이상이 5만 3천 개 이상의 커뮤니티에서 이용하는 낚시 게임을 개발·운영하고 있습니다.",
@@ -434,9 +449,22 @@ export const timeline: TimelineItem[] = [
     period: "Mar 2024 - Jan 2026",
     title: { en: "Daejeon Science High School", ko: "대전과학고등학교" },
     category: { en: "Education", ko: "교육" },
+    kind: "education",
+    sortOrder: 202601,
     summary: {
       en: "Completed high school with a 3.70 / 4.30 GPA while pursuing research, software, and competitive programming.",
       ko: "GPA 3.70 / 4.30으로 졸업하며 연구, 소프트웨어 및 경쟁 프로그래밍 활동을 수행했습니다.",
+    },
+  },
+  {
+    period: "Apr 2023 - Aug 2025",
+    title: { en: "Pineapple Computer Club", ko: "파인애플 정보동아리" },
+    category: { en: "Leadership", ko: "Leadership" },
+    kind: "leadership",
+    sortOrder: 202508,
+    summary: {
+      en: "Served as president in 2025 and revitalized the long-running school computer club through broader projects and activities.",
+      ko: "2025년 회장을 맡아 오랜 역사의 교내 정보동아리를 다양한 프로젝트와 활동 중심으로 활성화했습니다.",
     },
   },
   {
@@ -446,6 +474,8 @@ export const timeline: TimelineItem[] = [
       ko: "한국어 LLM을 위한 Self-Correction Quantization",
     },
     category: { en: "Research", ko: "Research" },
+    kind: "research",
+    sortOrder: 202511,
     summary: {
       en: "Proposed SCQ and evaluated Korean LLM quantization up to 12.8B parameters, including memory and reasoning trade-offs.",
       ko: "SCQ를 제안하고 최대 12.8B 한국어 LLM에서 메모리 절감과 추론 성능의 균형을 평가했습니다.",
@@ -456,15 +486,19 @@ export const timeline: TimelineItem[] = [
     period: "2017 - 2020; 2023 - 2025",
     title: { en: "Korea Olympiad in Informatics", ko: "한국정보올림피아드" },
     category: { en: "Problem Solving", ko: "Problem Solving" },
+    kind: "problem-solving",
+    sortOrder: 202512,
     summary: {
       en: "Earned four consecutive National Silver Prizes, two Regional Grand Prizes, and additional high-school division awards.",
       ko: "전국 은상 4회 연속 수상, 지역 대상 2회 및 고등부 본선·1차 대회 수상 기록을 쌓았습니다.",
     },
   },
   {
-    period: "2024 - 2025",
+    period: "Mar - Dec 2024",
     title: { en: "Infomaker", ko: "Infomaker" },
-    category: { en: "Problem Solving", ko: "Problem Solving" },
+    category: { en: "Leadership", ko: "Leadership" },
+    kind: "leadership",
+    sortOrder: 202412,
     summary: {
       en: "Founded and led the school's first algorithm problem-solving club, teaching and supporting about 20 students.",
       ko: "교내 최초 알고리즘 문제 해결 동아리를 창립하고 약 20명의 학생을 대상으로 교육과 활동을 이끌었습니다.",
@@ -477,6 +511,8 @@ export const timeline: TimelineItem[] = [
       ko: "DSHStack - 학생 주도 프로그래밍 대회",
     },
     category: { en: "Problem Solving", ko: "Problem Solving" },
+    kind: "problem-solving",
+    sortOrder: 202502,
     summary: {
       en: "Created a repeatable student-run contest series and led its planning, problem setting, review, and BOJ operations.",
       ko: "지속 가능한 학생 주도 대회 시리즈를 만들고 기획·출제·검수·BOJ 운영을 총괄했습니다.",
@@ -490,6 +526,8 @@ export const timeline: TimelineItem[] = [
       ko: "상생이음 - 다국어 외국인 노동자 지원 플랫폼",
     },
     category: { en: "Project", ko: "Project" },
+    kind: "project",
+    sortOrder: 202506,
     summary: {
       en: "Led a multilingual support platform for foreign workers; received an Honorable Mention at an AI convergence hackathon.",
       ko: "외국인 노동자를 위한 다국어 지원 플랫폼을 이끌어 AI 융합 정책 발굴 해커톤 장려상을 수상했습니다.",
@@ -503,6 +541,8 @@ export const timeline: TimelineItem[] = [
       ko: "LLM 기반 MMPI-2 응답 자동 분석",
     },
     category: { en: "Research", ko: "Research" },
+    kind: "research",
+    sortOrder: 202510,
     summary: {
       en: "Applied MMPI-2 to several language models and compared their scale scores and response biases.",
       ko: "여러 언어 모델에 MMPI-2를 적용해 모델별 척도 점수와 응답 편향을 비교했습니다.",
@@ -516,6 +556,8 @@ export const timeline: TimelineItem[] = [
       ko: "3D Gaussian Splatting 촬영 품질 연구",
     },
     category: { en: "Research", ko: "Research" },
+    kind: "research",
+    sortOrder: 202501,
     summary: {
       en: "Led 33 controlled reconstruction experiments; received the Grand Prize and Minister of Science and ICT Award.",
       ko: "33개 통제 조건의 복원 실험을 이끌어 대상 및 과학기술정보통신부장관상을 수상했습니다.",
@@ -529,6 +571,8 @@ export const timeline: TimelineItem[] = [
       ko: "SnowMix - AI 웹 접근성 도우미",
     },
     category: { en: "Project", ko: "Project" },
+    kind: "project",
+    sortOrder: 202411,
     summary: {
       en: "Led an AI-assisted browser accessibility project that received a Bronze Prize in a national software competition.",
       ko: "AI 기반 브라우저 접근성 프로젝트를 이끌어 전국 고등학교 동아리 소프트웨어 경진대회 동상을 수상했습니다.",
@@ -542,6 +586,8 @@ export const timeline: TimelineItem[] = [
       ko: "시각장애인을 위한 실내 내비게이션",
     },
     category: { en: "Project", ko: "Project" },
+    kind: "project",
+    sortOrder: 202409,
     summary: {
       en: "Built a mobile indoor navigation program that guides visually impaired users with spoken directions and elevator-prioritized accessible routes.",
       ko: "시각장애인에게 음성 길안내와 엘리베이터 우선 접근성 경로를 제공하는 모바일 실내 내비게이션 프로그램을 개발했습니다.",
@@ -555,6 +601,8 @@ export const timeline: TimelineItem[] = [
       ko: "문화유산 이미지 복원",
     },
     category: { en: "Research", ko: "Research" },
+    kind: "research",
+    sortOrder: 202410,
     summary: {
       en: "Explored img2img, inpainting, and ControlNet for structurally guided cultural-heritage restoration.",
       ko: "img2img, inpainting, ControlNet을 활용한 구조 보존 문화유산 복원 방식을 탐구했습니다.",
@@ -565,6 +613,8 @@ export const timeline: TimelineItem[] = [
     period: "2024",
     title: { en: "Nexon Youth Programming Challenge", ko: "넥슨 청소년 프로그래밍 챌린지" },
     category: { en: "Problem Solving", ko: "Problem Solving" },
+    kind: "problem-solving",
+    sortOrder: 202408,
     summary: {
       en: "Reached the finals in the NYPC 15-19 Division.",
       ko: "NYPC 15-19세 부문 본선에 진출했습니다.",
@@ -574,6 +624,8 @@ export const timeline: TimelineItem[] = [
     period: "2018 - 2020",
     title: { en: "Information Technology Gifted Education", ko: "정보영재교육" },
     category: { en: "Project", ko: "Project" },
+    kind: "project",
+    sortOrder: 202012,
     summary: {
       en: "Built a C++ typing tutor, a Python vocabulary tool, and a KoGPT2 conversational bot.",
       ko: "C++ 타자 연습, Python 어휘 학습, KoGPT2 대화형 봇을 제작했습니다.",
