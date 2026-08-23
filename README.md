@@ -1,20 +1,25 @@
-Hello, Github! 👋
+# Geonwoo Kim / KOI3125
 
-이 마법이 희미하게 빛난다면. \
-별을 동경하는 대학생 개발자 KOI3125입니다!
+별을 동경하는 DGIST 학부생 개발자 김건우입니다.
 
 ## Portfolio
-- [KOI3125's portfolio](https://kimustory.net/members/koi3125)
+
+- [Responsive portfolio](https://koi3125.com/)
+- [Public résumé](./Geonwoo%20Kim%20Resume.pdf)
 
 ## Contact
-- [Discord @koi3125](https://discord.com/users/753625063357546556)
-- [KOI's discord server: Hello, Discord!](https://discord.gg/mcBjTMMxN6)
-- [Email: koi312500@gmail.com](mailto:koi312500@gmail.com)
 
-## Github Stats
-[![KOI3125's GitHub stats](https://github-readme-stats.vercel.app/api?username=koi312500&theme=tokyonight&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
+- [GitHub @koi312500](https://github.com/koi312500)
+- [Email: koi@dgist.ac.kr](mailto:koi@dgist.ac.kr)
 
-## Solved.ac Profile
-[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=koi312500)](https://solved.ac/koi312500)
+## Local development
 
-[![BOJ](https://bojstat.vulcan.site/v2/en/koi312500)](https://www.acmicpc.net/user/koi312500)
+The portfolio is a static Vite + React application in `Web/`.
+
+```sh
+cd Web
+npm ci
+npm run dev
+```
+
+`npm test` runs the behavior tests, and `npm run build` creates the GitHub Pages output in `Web/dist`.

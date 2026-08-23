@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://koi3125.com/sitemap.xml

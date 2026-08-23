@@ -1,335 +1,72 @@
-<!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>KOI3125 Portfolio</title>
-    </head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            background: linear-gradient(to right, #e3ffe7, #d9e7ff);
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            padding: 50px 0;
-            text-align: center;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            margin-top: 10px;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        .profile-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            object-fit: cover;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease-in-out;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .profile-photo:hover {
-            transform: scale(1.05);
-        }
-        section {
-            margin: 40px 0;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .about,
-        .projects,
-        .contact {
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: #3498db;
-            margin-bottom: 20px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        ul {
-            list-style: none;
-            font-size: 1.1rem;
-        }
-
-        ul li {
-            padding: 10px 0;
-            font-weight: 300;
-        }
-
-        .contact p,
-        .contact a {
-            font-size: 1.2rem;
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 40px;
-            border-top: 4px solid #3498db;
-        }
-
-        footer p {
-            font-size: 1rem;
-        }
-
-        section {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease-in-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            header p,
-            h2,
-            ul li,
-            .contact p,
-            .contact a {
-                font-size: 1rem;
-            }
-
-            .container {
-                width: 90%;
-            }
-
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            header p,
-            h2,
-            ul li,
-            .contact p,
-            .contact a {
-                font-size: 0.9rem;
-            }
-
-            .profile-img {
-                width: 120px;
-                height: 120px;
-            }
-        }
-        .project-details {
-            display: none;
-            margin-top: 10px;
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .toggle-btn {
-            cursor: pointer;
-            background-color: #0066cc;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-
-        .toggle-btn:hover {
-            background-color: #005bb5;
-        }
-    </style>
-    <body>
-        <header>
-            <img
-                src="/KOI3125_profile.png"
-                alt="Profile Photo"
-                class="profile-photo"
-            />
-            <h1>김건우 / KOI3125</h1>
-            <p>
-                너라는 별과, 내가 같이 걸을 수 있기를.
-                고등학생이자 개발자, KOI3125입니다!
-            </p>
-        </header>
-
-        <section id="skills">
-            <h2>💻 기술</h2>
-            <div>
-                <h3>⌨️ 언어, 라이브러리</h3>
-                <p>
-                    C(2015~), C++(2017~), Python(2019~), PyQt5(2019~), discord.py(2020~), Pycord(2022~), JS/TS(2024~)
-                </p>
-                <h3>🔧 도구</h3>
-                <p>
-                    Visual Studio(2015~), Dev C++(2017~), Code::Blocks(2017~), Git(2017~), Visual Studio Code(2021~), Pycharm / Webstorm (2024~)
-                </p>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>⚙️ 프로젝트</h2>
-            <div class="project">
-                <h3>단순명료한 타자연습 프로그램(2018)</h3>
-                <button class="toggle-btn">더 보기</button>
-                <div class="project-details">
-                    <p>
-                        C++ 콘솔 환경에서 작동하는 단순명료한 타자 연습 프로그램입니다.
-                    </p>
-                    <a
-                        href="https://github.com/koi312500/Typing_practice_program/"
-                        >프로젝트 링크</a
-                    >
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>어휘력 학습 프로그램(2019, 2023)</h3>
-                <button class="toggle-btn">더 보기</button>
-                <div class="project-details">
-                    <p>
-                        Python과 PyQt5, 우리말샘 OpenAPI로 돌아가는 어휘력 학습 프로그램입니다.
-                    </p>
-                    <a
-                        href="https://github.com/koi312500/lexical_learning_program/"
-                        >프로젝트 링크</a
-                    >
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>코이봇(2020~)</h3>
-                <button class="toggle-btn">더 보기</button>
-                <div class="project-details">
-                    <p>
-                        KoGPT2를 활용한 인공지능 스피커와 같은 프로그램에서 시작된 디스코드 봇입니다.
-                        현재는 다용도로 필요에 맞춰서 기능을 구현하여 사용하고 있습니다.
-                    </p>
-                    <a
-                        href="https://github.com/koi312500/Koi_Bot_Discord/"
-                        >프로젝트 링크</a
-                    >
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>텍스트 게임(동아리 알타이르 협업)</h3>
-                <button class="toggle-btn">더 보기</button>
-                <div class="project-details">
-                    <p>
-                        스토리를 바탕으로 한 일방향 텍스트 게임입니다.
-                    </p>
-                    <a
-                        href="https://github.com/koi312500/Altair_game/"
-                        >프로젝트 링크</a
-                    >
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>📞 연락처</h2>
-            <p>
-                Discord:
-                <a href="https://discord.com/users/753625063357546556"
-                    >@koi3125</a
-                >
-            </p>
-            <p>
-                Discord server:
-                <a href="https://discord.gg/mcBjTMMxN6">Hello, Discord!</a>
-            </p>
-            <p>
-                Email:
-                <a href="mailto:koi312500@gmail.com">koi312500@gmail.com</a>
-            </p>
-            <p>Github: <a href="https://github.com/koi312500">koi312500</a></p>
-        </section>
-
-        <footer>
-            <p>&copy; 2024-2025 KOI3125. All Rights Reserved.</p>
-        </footer>
-    </body>
-    <script>
-        document.querySelectorAll(".toggle-btn").forEach((button) => {
-            button.addEventListener("click", () => {
-                const details = button.nextElementSibling;
-
-                if (
-                    details.style.display === "none" ||
-                    details.style.display === ""
-                ) {
-                    details.style.display = "block";
-                    button.textContent = "접기";
-                } else {
-                    details.style.display = "none";
-                    button.textContent = "더 보기";
-                }
-            });
-        });
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fffdfb" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <meta
+      name="description"
+      content="Geonwoo Kim is an undergraduate, competitive programmer, developer, and researcher at DGIST."
+    />
+    <link rel="canonical" href="https://koi3125.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Geonwoo Kim Portfolio" />
+    <meta property="og:title" content="Geonwoo Kim · Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Software, accessibility, AI, competitive programming, and research by Geonwoo Kim."
+    />
+    <meta property="og:url" content="https://koi3125.com/" />
+    <meta
+      property="og:image"
+      content="https://koi3125.com/og.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Geonwoo Kim developer portfolio social card"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Geonwoo Kim · Developer Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Software, accessibility, AI, competitive programming, and research by Geonwoo Kim."
+    />
+    <meta
+      name="twitter:image"
+      content="https://koi3125.com/og.png"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Geonwoo Kim",
+        "alternateName": ["김건우", "KOI3125"],
+        "url": "https://koi3125.com/",
+        "email": "mailto:koi@dgist.ac.kr",
+        "sameAs": ["https://github.com/koi312500"],
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Daegu Gyeongbuk Institute of Science and Technology"
+        },
+        "knowsAbout": [
+          "Competitive programming",
+          "Software engineering",
+          "Web accessibility",
+          "Large language models",
+          "Computer vision"
+        ]
+      }
     </script>
+    <title>About | Geonwoo Kim</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
