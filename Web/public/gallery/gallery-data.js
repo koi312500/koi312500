@@ -24,6 +24,21 @@ window.galleryItems = [
     ],
   },
   {
+    id: "5-3d",
+    kind: "model3d",
+    number: 5,
+    artist: "Lamdown (김승주)",
+    received: "2026-02-06",
+    source: { en: "School", ko: "학교" },
+    note: {
+      en: "Created from Artwork 5.",
+      ko: "5번째 그림을 바탕으로 제작했습니다.",
+    },
+    images: [
+      { src: "/gallery/art/05-3d.png", label: { en: "3D model", ko: "3D 모델" } },
+    ],
+  },
+  {
     id: "26",
     number: 26,
     artist: "min_ble",
@@ -200,10 +215,6 @@ window.galleryItems = [
     images: [
       { src: "/gallery/art/05-main.png", label: { en: "Artwork", ko: "그림" } },
       { src: "/gallery/art/05-dark.png", label: { en: "Dark background", ko: "검은 배경 버전" } },
-      {
-        src: "/gallery/art/05-3d.png",
-        label: { en: "3D version by Lamdown (Kim Seungju)", ko: "Lamdown(김승주)의 3D 버전" },
-      },
     ],
   },
   {

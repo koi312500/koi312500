@@ -14,6 +14,7 @@
       artist: "Artist",
       photographer: "Photographer",
       creator: "Creator",
+      modeler: "3D artist",
       received: "Received",
       source: "From",
       commissioner: "Commissioned by",
@@ -25,6 +26,8 @@
       photoTitle: (value) => `Profile photo ${value}`,
       bannerNumber: (value) => `Banner No. ${value}`,
       bannerTitle: (value) => `Banner ${value}`,
+      modelNumber: (value) => `3D model of Artwork ${value}`,
+      modelTitle: (value) => `3D model of Artwork ${value}`,
       variants: (value) => `${value} versions`,
       open: (title, artist) => `Open ${title}${artist ? ` by ${artist}` : ""}`,
       close: "Close artwork details",
@@ -33,6 +36,7 @@
       artist: "그려준 사람",
       photographer: "촬영자",
       creator: "제작자",
+      modeler: "3D 제작자",
       received: "받은 날짜",
       source: "받은 경로",
       commissioner: "의뢰자",
@@ -44,6 +48,8 @@
       photoTitle: (value) => `${value}번째 사진`,
       bannerNumber: (value) => `${value}번째 배너`,
       bannerTitle: (value) => `${value}번째 배너`,
+      modelNumber: (value) => `${value}번째 그림 · 3D 모델`,
+      modelTitle: (value) => `${value}번째 그림 3D 모델`,
       variants: (value) => `${value}개 버전`,
       open: (title, artist) => `${artist ? `${artist}의 ` : ""}${title} 자세히 보기`,
       close: "그림 상세 닫기",
@@ -55,18 +61,21 @@
   function itemNumber(item, copy) {
     if (item.kind === "photo") return copy.photoNumber(item.number);
     if (item.kind === "banner") return copy.bannerNumber(item.number);
+    if (item.kind === "model3d") return copy.modelNumber(item.number);
     return copy.number(item.number);
   }
 
   function itemTitle(item, copy) {
     if (item.kind === "photo") return copy.photoTitle(item.number);
     if (item.kind === "banner") return copy.bannerTitle(item.number);
+    if (item.kind === "model3d") return copy.modelTitle(item.number);
     return copy.title(item.number);
   }
 
   function contributorLabel(item, copy) {
     if (item.kind === "photo") return copy.photographer;
     if (item.kind === "banner") return copy.creator;
+    if (item.kind === "model3d") return copy.modeler;
     return copy.artist;
   }
 
