@@ -45,7 +45,10 @@ window.galleryItems = [
     received: "2025-08-04",
     source: { en: "CREPE", ko: "CREPE" },
     commission: "mas05_",
-    images: [{ src: "/gallery/art/26.png", label: { en: "Artwork", ko: "그림" } }],
+    images: [
+      { src: "/gallery/art/26.png", label: { en: "Full composition", ko: "전체 구성" } },
+      { src: "/gallery/art/26-solo.png", label: { en: "Solo version", ko: "단독 버전" } },
+    ],
   },
   {
     id: "25",
