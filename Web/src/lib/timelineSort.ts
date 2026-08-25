@@ -1,7 +1,16 @@
-import type { TimelineDateRange } from "../types";
+import type { TimelineDateRange, TimelineItem } from "../types";
 
 type SortableTimelineItem = {
   dateRanges: readonly TimelineDateRange[];
+  kind: TimelineItem["kind"];
+};
+
+const activeKindOrder: Record<TimelineItem["kind"], number> = {
+  education: 0,
+  project: 1,
+  research: 2,
+  "problem-solving": 3,
+  leadership: 4,
 };
 
 function getCurrentMonth() {
@@ -42,7 +51,10 @@ export function compareTimelineItems(
   const rightActive = getLatestActiveRange(right.dateRanges, currentMonth);
 
   if (leftActive && rightActive) {
+    const kindOrder = activeKindOrder[left.kind] - activeKindOrder[right.kind];
+
     return (
+      kindOrder ||
       rightActive.start.localeCompare(leftActive.start) ||
       compareRangesNewestFirst(leftActive, rightActive)
     );
