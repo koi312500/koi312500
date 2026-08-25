@@ -1,19 +1,34 @@
 import { useMemo, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { timeline } from "../data/content";
 import { timelineGroups } from "../data/workGroups";
 import type { Language } from "../lib/navigation";
+import { compareTimelineItems } from "../lib/timelineSort";
 import type { TimelineItem } from "../types";
 
 type TimelineMode = "grouped" | "all";
 
-function WorkLink({ item, language }: { item: TimelineItem; language: Language }) {
-  if (!item.projectId) return null;
+function TimelineLink({ item, language }: { item: TimelineItem; language: Language }) {
+  if (item.projectId) {
+    return (
+      <a className="timeline-project-link" href={`/works/${item.projectId}`}>
+        {language === "en" ? "View details" : "자세히 보기"}
+        <ArrowRight aria-hidden="true" />
+      </a>
+    );
+  }
+
+  if (!item.externalLink) return null;
 
   return (
-    <a className="timeline-project-link" href={`/works/${item.projectId}`}>
-      {language === "en" ? "View details" : "자세히 보기"}
-      <ArrowRight aria-hidden="true" />
+    <a
+      className="timeline-project-link"
+      href={item.externalLink.href}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {item.externalLink.label[language]}
+      <ArrowUpRight aria-hidden="true" />
     </a>
   );
 }
@@ -24,7 +39,7 @@ function GroupedTimeline({ language }: { language: Language }) {
       {timelineGroups.map((group) => {
         const items = timeline
           .filter((item) => item.kind === group.id)
-          .sort((left, right) => left.cvOrder - right.cvOrder);
+          .sort(compareTimelineItems);
 
         if (items.length === 0) return null;
 
@@ -48,7 +63,7 @@ function GroupedTimeline({ language }: { language: Language }) {
                   <article>
                     <h3>{item.title[language]}</h3>
                     <p>{item.summary[language]}</p>
-                    <WorkLink item={item} language={language} />
+                    <TimelineLink item={item} language={language} />
                   </article>
                 </li>
               ))}
@@ -71,7 +86,7 @@ function AllTimeline({ language, items }: { language: Language; items: TimelineI
             <span>{item.category[language]}</span>
             <h2>{item.title[language]}</h2>
             <p>{item.summary[language]}</p>
-            <WorkLink item={item} language={language} />
+            <TimelineLink item={item} language={language} />
           </article>
         </li>
       ))}
@@ -82,7 +97,7 @@ function AllTimeline({ language, items }: { language: Language; items: TimelineI
 export function TimelineView({ language }: { language: Language }) {
   const [mode, setMode] = useState<TimelineMode>("all");
   const sortedTimeline = useMemo(
-    () => [...timeline].sort((left, right) => right.sortOrder - left.sortOrder),
+    () => [...timeline].sort(compareTimelineItems),
     [],
   );
 

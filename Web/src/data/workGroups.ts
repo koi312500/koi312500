@@ -16,6 +16,11 @@ export const workGroups = [
     title: { en: "Problem Solving", ko: "Problem Solving" },
     projectIds: ["dshstack"],
   },
+  {
+    id: "activities",
+    title: { en: "Activities", ko: "Activities" },
+    projectIds: ["lectio", "dgist-sns-supporters"],
+  },
 ] as const;
 
 export const timelineGroups: Array<{
@@ -29,5 +34,8 @@ export const timelineGroups: Array<{
   },
   { id: "research", title: { en: "Research", ko: "Research" } },
   { id: "project", title: { en: "Project", ko: "Project" } },
-  { id: "leadership", title: { en: "Leadership", ko: "Leadership" } },
+  {
+    id: "leadership",
+    title: { en: "Leadership & Activities", ko: "Leadership & Activities" },
+  },
 ];

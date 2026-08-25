@@ -19,6 +19,7 @@ export function ProjectCard({
   highlighted,
   onOpen,
 }: ProjectCardProps) {
+  const isActivity = project.kind === "activity";
   const title = project.title[language];
   const outcome = project.cardOutcome?.[language] ?? project.outcome[language];
   const outcomeIsAward =
@@ -40,11 +41,21 @@ export function ProjectCard({
         </div>
         <h2>{title}</h2>
         <div className="project-card__description">
-          <span>{language === "en" ? "Project overview" : "프로젝트 개요"}</span>
+          <span>
+            {isActivity
+              ? language === "en"
+                ? "Activity overview"
+                : "활동 개요"
+              : language === "en"
+                ? "Project overview"
+                : "프로젝트 개요"}
+          </span>
           <p className="project-card__summary">{project.summary[language]}</p>
         </div>
         <div className="project-card__result">
-          <span>{language === "en" ? "Result" : "결과"}</span>
+          <span>
+            {isActivity ? (language === "en" ? "Focus" : "주요 활동") : language === "en" ? "Result" : "결과"}
+          </span>
           <p>
             {outcomeIsAward ? <Trophy aria-hidden="true" /> : null}
             <span>{outcome}</span>
@@ -56,11 +67,17 @@ export function ProjectCard({
             onClick={() => onOpen(project)}
             aria-label={
               language === "en"
-                ? `${title} project details`
-                : `${title} 프로젝트 상세`
+                ? `${title} ${isActivity ? "activity" : "project"} details`
+                : `${title} ${isActivity ? "활동" : "프로젝트"} 상세`
             }
           >
-            {language === "en" ? "Project details" : "프로젝트 상세"}
+            {isActivity
+              ? language === "en"
+                ? "Activity details"
+                : "활동 상세"
+              : language === "en"
+                ? "Project details"
+                : "프로젝트 상세"}
             <ArrowUpRight aria-hidden="true" />
           </button>
           {project.github ? (
@@ -71,6 +88,15 @@ export function ProjectCard({
               aria-label={`${title} GitHub`}
             >
               GitHub
+            </a>
+          ) : null}
+          {project.externalLink ? (
+            <a
+              href={project.externalLink.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {project.externalLink.label[language]}
             </a>
           ) : null}
         </div>

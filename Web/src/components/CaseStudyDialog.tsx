@@ -15,6 +15,7 @@ export function CaseStudyDialog({
   language,
   onClose,
 }: CaseStudyDialogProps) {
+  const isActivity = project.kind === "activity";
   const outcomeIsAward =
     project.award?.[language] === project.outcome[language];
   const closeButton = useRef<HTMLButtonElement>(null);
@@ -78,7 +79,13 @@ export function CaseStudyDialog({
           onClick={onClose}
           ref={closeButton}
           aria-label={
-            language === "en" ? "Close project details" : "프로젝트 상세 닫기"
+            isActivity
+              ? language === "en"
+                ? "Close activity details"
+                : "활동 상세 닫기"
+              : language === "en"
+                ? "Close project details"
+                : "프로젝트 상세 닫기"
           }
         >
           <X aria-hidden="true" />
@@ -90,7 +97,15 @@ export function CaseStudyDialog({
           <span>{project.period}</span>
         </div>
         <div className="dialog-description">
-          <span>{language === "en" ? "Project overview" : "프로젝트 개요"}</span>
+          <span>
+            {isActivity
+              ? language === "en"
+                ? "Activity overview"
+                : "활동 개요"
+              : language === "en"
+                ? "Project overview"
+                : "프로젝트 개요"}
+          </span>
           <p className="dialog-summary">{project.summary[language]}</p>
         </div>
         <strong className="dialog-outcome">{project.outcome[language]}</strong>
@@ -116,6 +131,16 @@ export function CaseStudyDialog({
             rel="noreferrer"
           >
             GitHub <ExternalLink aria-hidden="true" />
+          </a>
+        ) : null}
+        {project.externalLink ? (
+          <a
+            className="dialog-link"
+            href={project.externalLink.href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {project.externalLink.label[language]} <ExternalLink aria-hidden="true" />
           </a>
         ) : null}
       </section>

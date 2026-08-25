@@ -20,6 +20,7 @@ export type SkillGroup = {
 
 export type Project = {
   id: string;
+  kind?: "project" | "activity";
   title: LocalizedText;
   period: string;
   category: LocalizedText;
@@ -32,15 +33,29 @@ export type Project = {
   stack: string[];
   github?: string;
   website?: string;
+  externalLink?: {
+    href: string;
+    label: LocalizedText;
+  };
+};
+
+export type TimelineMonth = `${number}-${number}`;
+
+export type TimelineDateRange = {
+  start: TimelineMonth;
+  end: TimelineMonth | "present";
 };
 
 export type TimelineItem = {
   period: string;
+  dateRanges: TimelineDateRange[];
   title: LocalizedText;
   category: LocalizedText;
   kind: "education" | "problem-solving" | "research" | "project" | "leadership";
-  cvOrder: number;
-  sortOrder: number;
   summary: LocalizedText;
   projectId?: string;
+  externalLink?: {
+    href: string;
+    label: LocalizedText;
+  };
 };
