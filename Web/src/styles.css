@@ -1098,11 +1098,18 @@ footer {
   line-height: 1.65;
 }
 
+.timeline-item-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.85rem;
+  align-items: center;
+  margin-top: 0.55rem;
+}
+
 .timeline-project-link {
   display: inline-flex;
   gap: 0.35rem;
   align-items: center;
-  margin-top: 0.55rem;
   color: var(--accent-strong);
   font-size: 0.68rem;
   font-weight: 700;

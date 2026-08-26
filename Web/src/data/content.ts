@@ -471,7 +471,7 @@ export const timeline: TimelineItem[] = [
     kind: "education",
     summary: {
       en: "School of Undergraduate Studies; GPA 4.21 / 4.30, with interests across computing, mathematics, and research.",
-      ko: "School of Undergraduate Studies에서 GPA 4.21 / 4.30을 기록하며 컴퓨팅, 수학 및 연구 관심사를 확장하고 있습니다.",
+      ko: "DGIST 기초학부에서 GPA 4.21 / 4.30을 기록하며 컴퓨팅, 수학 및 연구 관심사를 확장하고 있습니다.",
     },
     externalLink: {
       href: "https://college.dgist.ac.kr/",
@@ -513,7 +513,7 @@ export const timeline: TimelineItem[] = [
     },
     externalLink: {
       href: "https://djshs.djsch.kr/",
-      label: { en: "Official website", ko: "공식 사이트" },
+      label: { en: "Official website", ko: "대전과학고등학교 공식 사이트" },
     },
   },
   {
@@ -526,6 +526,7 @@ export const timeline: TimelineItem[] = [
       en: "Leading team DGILOG in planning and producing official social media content for the 2026 DGIST SNS Supporters program.",
       ko: "DGILOG 팀장으로 2026년 DGIST SNS 서포터즈의 공식 SNS 콘텐츠를 기획하고 제작하고 있습니다.",
     },
+    projectId: "dgist-sns-supporters",
   },
   {
     period: "Mar 2026 - Present",
@@ -537,6 +538,7 @@ export const timeline: TimelineItem[] = [
       en: "Co-founded Lectio and operate @lectio_in_life, creating content that shares perspectives on books and broader conversations around reading.",
       ko: "독서모임 렉티오를 공동 설립하고 @lectio_in_life를 운영하며, 책에 대한 의견과 독서를 둘러싼 다양한 이야기를 콘텐츠로 만들고 있습니다.",
     },
+    projectId: "lectio",
     externalLink: {
       href: "https://www.instagram.com/lectio_in_life/",
       label: { en: "@lectio_in_life", ko: "@lectio_in_life" },

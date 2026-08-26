@@ -100,6 +100,12 @@
     return wrapper;
   }
 
+  function orderedImages(item) {
+    return [...item.images].sort(
+      (left, right) => Number(Boolean(right.primary)) - Number(Boolean(left.primary)),
+    );
+  }
+
   function renderGallery() {
     if (!grid || !count) return;
     const lang = language();
@@ -108,6 +114,7 @@
     count.textContent = copy.itemCount(items.length);
 
     items.forEach((item) => {
+      const images = orderedImages(item);
       const card = document.createElement("button");
       card.className = "gallery-card";
       card.type = "button";
@@ -118,7 +125,7 @@
       const imageStage = document.createElement("span");
       imageStage.className = "gallery-card__image";
       const image = document.createElement("img");
-      image.src = item.images[0].src;
+      image.src = images[0].src;
       image.alt = `${title}${item.artist ? ` — ${item.artist}` : ""}`;
       image.loading = "lazy";
       image.decoding = "async";
@@ -132,10 +139,10 @@
       number.className = "gallery-card__number";
       number.textContent = itemNumber(item, copy);
       topline.append(number);
-      if (item.images.length > 1) {
+      if (images.length > 1) {
         const variants = document.createElement("span");
         variants.className = "gallery-card__variants";
-        variants.textContent = copy.variants(item.images.length);
+        variants.textContent = copy.variants(images.length);
         topline.append(variants);
       }
 
@@ -176,7 +183,7 @@
     dialogMeta.replaceChildren(...metadata);
     dialogImages.replaceChildren();
 
-    item.images.forEach((entry) => {
+    orderedImages(item).forEach((entry) => {
       const figure = document.createElement("figure");
       figure.className = "dialog-image";
       const image = document.createElement("img");

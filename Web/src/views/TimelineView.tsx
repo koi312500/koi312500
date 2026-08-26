@@ -8,28 +8,29 @@ import type { TimelineItem } from "../types";
 
 type TimelineMode = "grouped" | "all";
 
-function TimelineLink({ item, language }: { item: TimelineItem; language: Language }) {
-  if (item.projectId) {
-    return (
-      <a className="timeline-project-link" href={`/works/${item.projectId}`}>
-        {language === "en" ? "View details" : "자세히 보기"}
-        <ArrowRight aria-hidden="true" />
-      </a>
-    );
-  }
-
-  if (!item.externalLink) return null;
+function TimelineLinks({ item, language }: { item: TimelineItem; language: Language }) {
+  if (!item.projectId && !item.externalLink) return null;
 
   return (
-    <a
-      className="timeline-project-link"
-      href={item.externalLink.href}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {item.externalLink.label[language]}
-      <ArrowUpRight aria-hidden="true" />
-    </a>
+    <div className="timeline-item-links">
+      {item.projectId ? (
+        <a className="timeline-project-link" href={`/works/${item.projectId}`}>
+          {language === "en" ? "View details" : "자세히 보기"}
+          <ArrowRight aria-hidden="true" />
+        </a>
+      ) : null}
+      {item.externalLink ? (
+        <a
+          className="timeline-project-link"
+          href={item.externalLink.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {item.externalLink.label[language]}
+          <ArrowUpRight aria-hidden="true" />
+        </a>
+      ) : null}
+    </div>
   );
 }
 
@@ -63,7 +64,7 @@ function GroupedTimeline({ language }: { language: Language }) {
                   <article>
                     <h3>{item.title[language]}</h3>
                     <p>{item.summary[language]}</p>
-                    <TimelineLink item={item} language={language} />
+                    <TimelineLinks item={item} language={language} />
                   </article>
                 </li>
               ))}
@@ -86,7 +87,7 @@ function AllTimeline({ language, items }: { language: Language; items: TimelineI
             <span>{item.category[language]}</span>
             <h2>{item.title[language]}</h2>
             <p>{item.summary[language]}</p>
-            <TimelineLink item={item} language={language} />
+            <TimelineLinks item={item} language={language} />
           </article>
         </li>
       ))}
