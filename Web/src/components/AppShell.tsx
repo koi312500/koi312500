@@ -30,7 +30,7 @@ export function AppShell({
       />
       <main className="main-stage">{children}</main>
       <BottomNav activeView={activeView} language={language} />
-      <footer>© 2026 Geonwoo Kim. All rights reserved.</footer>
+      <footer>© 2026 KOI3125. All rights reserved.</footer>
     </div>
   );
 }
