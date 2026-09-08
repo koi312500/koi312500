@@ -9,7 +9,7 @@ export default defineConfig({
       name: "clean-static-page-paths",
       configureServer(server) {
         server.middlewares.use((request, response, next) => {
-          if (["/gallery", "/privacy", "/sitemap"].includes(request.originalUrl ?? "")) {
+          if (["/gallery", "/privacy", "/terms", "/sitemap"].includes(request.originalUrl ?? "")) {
             response.statusCode = 308;
             response.setHeader("Location", `${request.originalUrl}/`);
             response.end();
@@ -20,7 +20,7 @@ export default defineConfig({
       },
       configurePreviewServer(server) {
         server.middlewares.use((request, response, next) => {
-          if (["/gallery", "/privacy", "/sitemap"].includes(request.originalUrl ?? "")) {
+          if (["/gallery", "/privacy", "/terms", "/sitemap"].includes(request.originalUrl ?? "")) {
             response.statusCode = 308;
             response.setHeader("Location", `${request.originalUrl}/`);
             response.end();
