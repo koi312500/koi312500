@@ -30,7 +30,7 @@ export function AppShell({
       />
       <main className="main-stage">{children}</main>
       <BottomNav activeView={activeView} language={language} />
-      <footer><nav aria-label={language === "ko" ? "서비스 정책" : "Service policies"}><a href="/privacy">{language === "ko" ? "개인정보처리방침" : "Privacy policy"}</a>{" · "}<a href="/terms">{language === "ko" ? "이용약관" : "Terms of use"}</a></nav>© 2026 KOI3125. All rights reserved.</footer>
+      <footer>© 2026 KOI3125. All rights reserved.</footer>
     </div>
   );
 }
