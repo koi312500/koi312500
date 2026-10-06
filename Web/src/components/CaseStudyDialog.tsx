@@ -16,6 +16,17 @@ export function CaseStudyDialog({
   onClose,
 }: CaseStudyDialogProps) {
   const isActivity = project.kind === "activity";
+  const isStudy = project.kind === "study";
+  const overviewLabel = isStudy
+    ? language === "en" ? "Study overview" : "학습 개요"
+    : isActivity
+      ? language === "en" ? "Activity overview" : "활동 개요"
+      : language === "en" ? "Project overview" : "프로젝트 개요";
+  const closeLabel = isStudy
+    ? language === "en" ? "Close study details" : "학습 상세 닫기"
+    : isActivity
+      ? language === "en" ? "Close activity details" : "활동 상세 닫기"
+      : language === "en" ? "Close project details" : "프로젝트 상세 닫기";
   const outcomeIsAward =
     project.award?.[language] === project.outcome[language];
   const closeButton = useRef<HTMLButtonElement>(null);
@@ -78,15 +89,7 @@ export function CaseStudyDialog({
           type="button"
           onClick={onClose}
           ref={closeButton}
-          aria-label={
-            isActivity
-              ? language === "en"
-                ? "Close activity details"
-                : "활동 상세 닫기"
-              : language === "en"
-                ? "Close project details"
-                : "프로젝트 상세 닫기"
-          }
+          aria-label={closeLabel}
         >
           <X aria-hidden="true" />
         </button>
@@ -97,15 +100,7 @@ export function CaseStudyDialog({
           <span>{project.period}</span>
         </div>
         <div className="dialog-description">
-          <span>
-            {isActivity
-              ? language === "en"
-                ? "Activity overview"
-                : "활동 개요"
-              : language === "en"
-                ? "Project overview"
-                : "프로젝트 개요"}
-          </span>
+          <span>{overviewLabel}</span>
           <p className="dialog-summary">{project.summary[language]}</p>
         </div>
         <strong className="dialog-outcome">{project.outcome[language]}</strong>

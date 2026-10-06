@@ -124,9 +124,94 @@ const projectOrder = [
   "snowmix",
   "arkit",
   "stable-diffusion",
+  "dgist",
+  "jane-street-fttp-2026",
+  "daejeon-science-high-school",
 ];
 
 export const projects: Project[] = [
+  {
+    id: "dgist",
+    kind: "study" as const,
+    title: { en: "DGIST - Undergraduate Studies", ko: "DGIST - 기초학부" },
+    period: "Feb 2026 - Present",
+    category: { en: "Undergraduate education", ko: "학부 과정" },
+    role: { en: "Undergraduate Student", ko: "학부생" },
+    summary: {
+      en: "Undergraduate studies at DGIST's School of Undergraduate Studies, with interests in computing, mathematics, and research.",
+      ko: "DGIST 기초학부에서 컴퓨터과학과 수학을 공부하며 연구 관심사를 넓혀가고 있습니다.",
+    },
+    outcome: { en: "School of Undergraduate Studies · GPA 4.21 / 4.30", ko: "기초학부 · GPA 4.21 / 4.30" },
+    cardOutcome: { en: "GPA 4.21 / 4.30", ko: "GPA 4.21 / 4.30" },
+    details: [
+      {
+        en: "Studies science and engineering through the School of Undergraduate Studies while exploring connections between computing, mathematics, and research.",
+        ko: "기초학부의 과학·공학 교육을 바탕으로 컴퓨터과학, 수학, 연구 사이의 연결을 탐색하고 있습니다.",
+      },
+    ],
+    stack: ["Computer Science", "Mathematics"],
+    externalLink: {
+      href: "https://college.dgist.ac.kr/",
+      label: { en: "Official website", ko: "기초학부 공식 사이트" },
+    },
+  },
+  {
+    id: "jane-street-fttp-2026",
+    kind: "study" as const,
+    title: { en: "Jane Street HKG FTTP 2026", ko: "Jane Street HKG FTTP 2026" },
+    period: "2026 Sep - 2026 Oct",
+    category: { en: "Trading and technology program", ko: "트레이딩·기술 교육 프로그램" },
+    role: { en: "Selected Participant", ko: "선발 참가자" },
+    summary: {
+      en: "Classes and team-based mock trading in Hong Kong, introducing first-year undergraduates to Jane Street's trading and technology.",
+      ko: "홍콩에서 대학 1학년을 대상으로 진행한 프로그램으로, 수업과 팀 기반 모의 트레이딩을 통해 Jane Street의 트레이딩과 기술을 배웠습니다.",
+    },
+    outcome: {
+      en: "Classes and team-based mock trading · Hong Kong",
+      ko: "수업 및 팀 기반 모의 트레이딩 · 홍콩",
+    },
+    cardOutcome: { en: "Classes & mock trading", ko: "수업 및 모의 트레이딩" },
+    details: [
+      {
+        en: "Selected for and attended the September 30 - October 3, 2026 Hong Kong session of FTTP, an introductory trading and technology program for first-year university students.",
+        ko: "대학 1학년 대상 트레이딩·기술 교육 프로그램인 FTTP에 선발되어 2026년 9월 30일부터 10월 3일까지 홍콩 일정에 참가했습니다.",
+      },
+      {
+        en: "Explored how mathematics and technology inform trading through classes and a team-based mock trading simulation.",
+        ko: "수업과 팀 기반 모의 트레이딩에 참여하며 수학과 기술이 트레이딩에 어떻게 활용되는지 배웠습니다.",
+      },
+    ],
+    stack: ["Mathematics", "Trading", "Technology"],
+    externalLink: {
+      href: "https://www.janestreet.com/join-jane-street/programs-and-events/fttp/",
+      label: { en: "Program information", ko: "프로그램 안내" },
+    },
+  },
+  {
+    id: "daejeon-science-high-school",
+    kind: "study" as const,
+    title: { en: "Daejeon Science High School for the Gifted", ko: "대전과학고등학교" },
+    period: "Mar 2024 - Jan 2026",
+    category: { en: "High school education", ko: "고등학교 과정" },
+    role: { en: "Graduate", ko: "졸업생" },
+    summary: {
+      en: "Completed high school while pursuing scientific research, software development, and competitive programming.",
+      ko: "과학 연구, 소프트웨어 개발, 알고리즘 문제 풀이와 동아리 활동을 병행하며 고등학교 과정을 마쳤습니다.",
+    },
+    outcome: { en: "High School Diploma · GPA 3.70 / 4.30", ko: "고등학교 졸업 · GPA 3.70 / 4.30" },
+    cardOutcome: { en: "GPA 3.70 / 4.30", ko: "GPA 3.70 / 4.30" },
+    details: [
+      {
+        en: "Combined school coursework with R&E research, individual graduation research, programming contests, and student club activities.",
+        ko: "교과 학습과 함께 R&E, 개인 졸업연구, 프로그래밍 대회 및 교내 동아리 활동을 수행했습니다.",
+      },
+    ],
+    stack: ["Science", "Research", "Competitive Programming"],
+    externalLink: {
+      href: "https://djshs.djsch.kr/",
+      label: { en: "Official website", ko: "대전과학고등학교 공식 사이트" },
+    },
+  },
   {
     id: "ep",
     title: { en: "Ep - Fishing Game", ko: "이프 - 낚시게임" },
@@ -473,10 +558,23 @@ export const timeline: TimelineItem[] = [
       en: "School of Undergraduate Studies; GPA 4.21 / 4.30, with interests across computing, mathematics, and research.",
       ko: "DGIST 기초학부에서 GPA 4.21 / 4.30을 기록하며 컴퓨팅, 수학 및 연구 관심사를 확장하고 있습니다.",
     },
+    projectId: "dgist",
     externalLink: {
       href: "https://college.dgist.ac.kr/",
-      label: { en: "School of Undergraduate Studies", ko: "기초학부 공식 사이트" },
+      label: { en: "Official website", ko: "기초학부 공식 사이트" },
     },
+  },
+  {
+    period: "2026 Sep - 2026 Oct",
+    dateRanges: [{ start: "2026-09", end: "2026-10" }],
+    title: { en: "Jane Street HKG FTTP 2026", ko: "Jane Street HKG FTTP 2026" },
+    category: { en: "Study", ko: "Study" },
+    kind: "education",
+    summary: {
+      en: "Selected for and attended Jane Street's Hong Kong trading and technology program, including classes and a team-based mock trading simulation.",
+      ko: "Jane Street의 홍콩 트레이딩·기술 교육 프로그램에 선발되어 수업과 팀 기반 모의 트레이딩에 참여했습니다.",
+    },
+    projectId: "jane-street-fttp-2026",
   },
   {
     period: "Jul 2026",
@@ -511,6 +609,7 @@ export const timeline: TimelineItem[] = [
       en: "Completed high school with a 3.70 / 4.30 GPA while pursuing research, software, and competitive programming.",
       ko: "GPA 3.70 / 4.30으로 졸업하며 연구, 소프트웨어 및 경쟁 프로그래밍 활동을 수행했습니다.",
     },
+    projectId: "daejeon-science-high-school",
     externalLink: {
       href: "https://djshs.djsch.kr/",
       label: { en: "Official website", ko: "대전과학고등학교 공식 사이트" },

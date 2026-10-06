@@ -23,7 +23,7 @@ const metadata: Record<Language, Record<ViewId, ViewMetadata>> = {
     works: {
       title: "Works | Geonwoo Kim",
       description:
-        "Selected software projects, research, and problem-solving work by Geonwoo Kim.",
+        "Software projects, research, problem solving, activities, and studies by Geonwoo Kim.",
     },
     timeline: {
       title: "Timeline | Geonwoo Kim",
@@ -42,7 +42,7 @@ const metadata: Record<Language, Record<ViewId, ViewMetadata>> = {
     },
     works: {
       title: "Works | 김건우",
-      description: "김건우의 주요 프로젝트, 연구 및 문제 해결 활동입니다.",
+      description: "김건우의 프로젝트, 연구, 문제 해결, 활동 및 학습 경험입니다.",
     },
     timeline: {
       title: "타임라인 | 김건우",

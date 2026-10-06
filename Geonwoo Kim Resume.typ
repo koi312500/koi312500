@@ -380,11 +380,11 @@
 #section("ADDITIONAL EDUCATION")
 
 #entry(
-  [Information Technology Gifted Education Program],
-  aside: [Daejeon Metropolitan Office of Education],
-  subtitle: [Elementary, Intermediate, and Advanced Courses],
-  date: [2018 - 2020],
+  [Jane Street FTTP 2026],
+  aside: [Hong Kong],
+  subtitle: [Trading and Technology Program for First-Year Undergraduates],
+  date: [Sep 30 - Oct 3, 2026],
   body: bullets((
-    [Progressed from a C++ Korean typing tutor (2018) to a Python/Qt vocabulary-learning application using the Open Korean Dictionary API (2019), then integrated a KoGPT2 conversational model into a Discord bot (2020).],
+    [Selected for and participated in classes on trading and technology and a team-based mock trading simulation, exploring how mathematics and technology inform trading.],
   )),
 )

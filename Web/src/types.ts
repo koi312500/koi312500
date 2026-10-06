@@ -20,7 +20,7 @@ export type SkillGroup = {
 
 export type Project = {
   id: string;
-  kind?: "project" | "activity";
+  kind?: "project" | "activity" | "study";
   title: LocalizedText;
   period: string;
   category: LocalizedText;

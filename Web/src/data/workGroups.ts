@@ -21,6 +21,11 @@ export const workGroups = [
     title: { en: "Activities", ko: "Activities" },
     projectIds: ["lectio", "dgist-sns-supporters"],
   },
+  {
+    id: "study",
+    title: { en: "Study", ko: "Study" },
+    projectIds: ["dgist", "jane-street-fttp-2026", "daejeon-science-high-school"],
+  },
 ] as const;
 
 export const timelineGroups: Array<{

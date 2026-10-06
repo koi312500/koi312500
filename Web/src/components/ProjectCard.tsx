@@ -20,6 +20,17 @@ export function ProjectCard({
   onOpen,
 }: ProjectCardProps) {
   const isActivity = project.kind === "activity";
+  const isStudy = project.kind === "study";
+  const overviewLabel = isStudy
+    ? language === "en" ? "Study overview" : "학습 개요"
+    : isActivity
+      ? language === "en" ? "Activity overview" : "활동 개요"
+      : language === "en" ? "Project overview" : "프로젝트 개요";
+  const detailsLabel = isStudy
+    ? language === "en" ? "Study details" : "학습 상세"
+    : isActivity
+      ? language === "en" ? "Activity details" : "활동 상세"
+      : language === "en" ? "Project details" : "프로젝트 상세";
   const title = project.title[language];
   const outcome = project.cardOutcome?.[language] ?? project.outcome[language];
   const outcomeIsAward =
@@ -41,20 +52,12 @@ export function ProjectCard({
         </div>
         <h2>{title}</h2>
         <div className="project-card__description">
-          <span>
-            {isActivity
-              ? language === "en"
-                ? "Activity overview"
-                : "활동 개요"
-              : language === "en"
-                ? "Project overview"
-                : "프로젝트 개요"}
-          </span>
+          <span>{overviewLabel}</span>
           <p className="project-card__summary">{project.summary[language]}</p>
         </div>
         <div className="project-card__result">
           <span>
-            {isActivity ? (language === "en" ? "Focus" : "주요 활동") : language === "en" ? "Result" : "결과"}
+            {isStudy ? (language === "en" ? "Focus" : "학습 내용") : isActivity ? (language === "en" ? "Focus" : "주요 활동") : language === "en" ? "Result" : "결과"}
           </span>
           <p>
             {outcomeIsAward ? <Trophy aria-hidden="true" /> : null}
@@ -65,19 +68,9 @@ export function ProjectCard({
           <button
             type="button"
             onClick={() => onOpen(project)}
-            aria-label={
-              language === "en"
-                ? `${title} ${isActivity ? "activity" : "project"} details`
-                : `${title} ${isActivity ? "활동" : "프로젝트"} 상세`
-            }
+            aria-label={`${title} ${detailsLabel}`}
           >
-            {isActivity
-              ? language === "en"
-                ? "Activity details"
-                : "활동 상세"
-              : language === "en"
-                ? "Project details"
-                : "프로젝트 상세"}
+            {detailsLabel}
             <ArrowUpRight aria-hidden="true" />
           </button>
           {project.github ? (
