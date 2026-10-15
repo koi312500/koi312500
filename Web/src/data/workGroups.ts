@@ -9,7 +9,7 @@ export const workGroups = [
   {
     id: "research",
     title: { en: "Research", ko: "Research" },
-    projectIds: ["scq", "gpt-mmpi2", "3dgs", "stable-diffusion"],
+    projectIds: ["dgist-cta-lab", "scq", "gpt-mmpi2", "3dgs", "stable-diffusion"],
   },
   {
     id: "problem-solving",

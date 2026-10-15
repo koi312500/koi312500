@@ -114,6 +114,7 @@ export const skillGroups: SkillGroup[] = [
 
 const projectOrder = [
   "ep",
+  "dgist-cta-lab",
   "lectio",
   "dgist-sns-supporters",
   "scq",
@@ -130,6 +131,21 @@ const projectOrder = [
 ];
 
 export const projects: Project[] = [
+  {
+    id: "dgist-cta-lab",
+    kind: "activity" as const,
+    title: { en: "DGIST CTA Lab", ko: "DGIST CTA Lab" },
+    period: "2026 Sep - Present",
+    category: { en: "Undergraduate research", ko: "학부연구" },
+    role: { en: "Undergraduate Researcher", ko: "학부연구생" },
+    summary: {
+      en: "Participating in research at DGIST CTA Lab as an undergraduate researcher.",
+      ko: "DGIST CTA Lab에서 학부연구생으로 연구에 참여하고 있습니다.",
+    },
+    outcome: { en: "Undergraduate Researcher", ko: "학부연구생" },
+    details: [],
+    stack: [],
+  },
   {
     id: "dgist",
     kind: "study" as const,
@@ -548,6 +564,18 @@ export const projects: Project[] = [
 );
 
 export const timeline: TimelineItem[] = [
+  {
+    period: "2026 Sep - Present",
+    dateRanges: [{ start: "2026-09", end: "present" }],
+    title: { en: "DGIST CTA Lab", ko: "DGIST CTA Lab" },
+    category: { en: "Research", ko: "Research" },
+    kind: "research",
+    summary: {
+      en: "Participating in research as an undergraduate researcher at DGIST CTA Lab.",
+      ko: "DGIST CTA Lab 학부연구생으로 연구에 참여하고 있습니다.",
+    },
+    projectId: "dgist-cta-lab",
+  },
   {
     period: "Feb 2026 - Present",
     dateRanges: [{ start: "2026-02", end: "present" }],
