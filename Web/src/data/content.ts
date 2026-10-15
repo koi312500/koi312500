@@ -136,15 +136,22 @@ export const projects: Project[] = [
     kind: "activity" as const,
     title: { en: "DGIST CTA Lab", ko: "DGIST CTA Lab" },
     period: "2026 Sep - Present",
-    category: { en: "Undergraduate research", ko: "학부연구" },
+    category: { en: "Computational Theory and Applications Lab", ko: "계산 이론 및 응용 연구실" },
     role: { en: "Undergraduate Researcher", ko: "학부연구생" },
     summary: {
-      en: "Participating in research at DGIST CTA Lab as an undergraduate researcher.",
-      ko: "DGIST CTA Lab에서 학부연구생으로 연구에 참여하고 있습니다.",
+      en: "Participating in algorithm theory research at DGIST CTA Lab as an undergraduate researcher.",
+      ko: "DGIST CTA Lab에서 학부연구생으로 알고리즘 이론 분야 연구에 참여하고 있습니다.",
     },
     outcome: { en: "Undergraduate Researcher", ko: "학부연구생" },
-    details: [],
+    details: [{
+      en: "CTA stands for Computational Theory and Applications.",
+      ko: "CTA는 Computational Theory and Applications의 약자로, 계산 이론 및 응용을 뜻합니다.",
+    }],
     stack: [],
+    externalLink: {
+      href: "https://algo.dgist.ac.kr/",
+      label: { en: "Official website", ko: "연구실 공식 사이트" },
+    },
   },
   {
     id: "dgist",
@@ -235,12 +242,12 @@ export const projects: Project[] = [
     category: { en: "Production game service", ko: "상용 게임 서비스" },
     role: { en: "Main Developer", ko: "메인 개발자" },
     summary: {
-      en: "A fishing game serving 400,000+ users across 53,000+ communities.",
-      ko: "40만 명 이상의 사용자가 5만 3천 개 이상의 커뮤니티에서 이용하는 낚시 게임입니다.",
+      en: "A fishing game serving 530,000+ users across 53,000+ communities.",
+      ko: "53만 명 이상의 사용자가 5만 3천 개 이상의 커뮤니티에서 이용하는 낚시 게임입니다.",
     },
     outcome: {
-      en: "400,000+ users · 53,000+ communities",
-      ko: "사용자 40만+ · 커뮤니티 5만 3천+",
+      en: "530,000+ users · 53,000+ communities",
+      ko: "사용자 53만+ · 커뮤니티 5만 3천+",
     },
     details: [
       {
@@ -571,10 +578,14 @@ export const timeline: TimelineItem[] = [
     category: { en: "Research", ko: "Research" },
     kind: "research",
     summary: {
-      en: "Participating in research as an undergraduate researcher at DGIST CTA Lab.",
-      ko: "DGIST CTA Lab 학부연구생으로 연구에 참여하고 있습니다.",
+      en: "Participating in algorithm theory research as an undergraduate researcher at DGIST CTA Lab (Computational Theory and Applications).",
+      ko: "DGIST CTA Lab(계산 이론 및 응용 연구실) 학부연구생으로 알고리즘 이론 분야 연구에 참여하고 있습니다.",
     },
     projectId: "dgist-cta-lab",
+    externalLink: {
+      href: "https://algo.dgist.ac.kr/",
+      label: { en: "Official website", ko: "연구실 공식 사이트" },
+    },
   },
   {
     period: "Feb 2026 - Present",
@@ -622,8 +633,8 @@ export const timeline: TimelineItem[] = [
     category: { en: "Project", ko: "Project" },
     kind: "project",
     summary: {
-      en: "Developing and operating a production fishing game used by 400,000+ people across 53,000+ communities.",
-      ko: "40만 명 이상이 5만 3천 개 이상의 커뮤니티에서 이용하는 낚시 게임을 개발·운영하고 있습니다.",
+      en: "Developing and operating a production fishing game used by 530,000+ people across 53,000+ communities.",
+      ko: "53만 명 이상이 5만 3천 개 이상의 커뮤니티에서 이용하는 낚시 게임을 개발·운영하고 있습니다.",
     },
     projectId: "ep",
   },

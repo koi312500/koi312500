@@ -5,10 +5,10 @@
 #let rule-gray = rgb("#B8C2CC")
 
 #let page-decoration = context {
-  place(top + right, dx: 0mm, dy: 0mm)[
+  place(top + right, dx: 0.4mm, dy: -0.4mm)[
     #rect(
-      width: 90mm,
-      height: 2.0mm,
+      width: 90.4mm,
+      height: 2.4mm,
       fill: gradient.linear(
         (slate.transparentize(100%), 0%),
         (slate, 100%),
@@ -16,8 +16,8 @@
       ),
     )
   ]
-  place(top + right, dx: -11.5mm, dy: 0mm)[
-    #rect(width: 2.0mm, height: 32.5mm, fill: slate.transparentize(40%))
+  place(top + right, dx: -11.5mm, dy: -0.4mm)[
+    #rect(width: 2.0mm, height: 32.9mm, fill: slate.transparentize(40%))
   ]
   if counter(page).get().first() == 1 {
     place(top + left, dx: 0.8mm, dy: 344.5mm)[
@@ -28,6 +28,17 @@
     ]
     place(top + left, dx: -6.7mm, dy: 313.6mm)[
       #line(length: 70mm, angle: -60deg, stroke: (paint: slate.transparentize(80%), thickness: 1.45mm, cap: "round"))
+    ]
+  }
+  if counter(page).get().first() == 2 {
+    place(top + left, dx: -6.136mm, dy: 341.071mm)[
+      #line(length: 122mm, angle: -50deg, stroke: (paint: slate.transparentize(86%), thickness: 1.45mm, cap: "round"))
+    ]
+    place(top + left, dx: -12.068mm, dy: 329.856mm)[
+      #line(length: 119mm, angle: -50deg, stroke: (paint: slate.transparentize(69%), thickness: 1.45mm, cap: "round"))
+    ]
+    place(top + left, dx: -16.7mm, dy: 316.98mm)[
+      #line(length: 88mm, angle: -50deg, stroke: (paint: slate.transparentize(80%), thickness: 1.45mm, cap: "round"))
     ]
   }
 }
@@ -203,23 +214,17 @@
   date: [2024],
 )
 
-#section("EXPERIENCE")
+#section("RESEARCH")
 
 #entry(
-  linked-title([KimuStory - Ep], "https://github.com/KimuSoft"),
-  role: [Main Developer],
-  subtitle: details(
-    [Production Discord Fishing Game],
-    [400,000+ users across 53,000+ Discord servers],
-  ),
-  date: [Feb 2022 - Present],
+  [DGIST CTA Lab],
+  role: [Undergraduate Researcher],
+  subtitle: [Computational Theory and Applications Lab],
+  date: [Sep 2026 - Present],
   body: bullets((
-    [Build and maintain a stateful game service used by 400,000+ unique users across 53,000+ Discord servers.],
-    [Engineer interaction, progression, and backend systems with TypeScript, Node.js, discord.js, Redis, NestJS, REST APIs, and PostgreSQL, emphasizing concurrency, correctness, and fault handling.],
+    [Participating in research on algorithm theory.],
   )),
 )
-
-#section("RESEARCH")
 
 #entry(
   [Self-Correction Quantization for Korean Large Language Models],
@@ -251,7 +256,23 @@
 
 #pagebreak()
 
-#section("PROJECTS", first: true)
+#section("EXPERIENCE", first: true)
+
+#entry(
+  linked-title([KimuStory - Ep], "https://github.com/KimuSoft"),
+  role: [Main Developer],
+  subtitle: details(
+    [Production Discord Fishing Game],
+    [530,000+ users across 53,000+ Discord servers],
+  ),
+  date: [Feb 2022 - Present],
+  body: bullets((
+    [Build and maintain a stateful game service used by 530,000+ unique users across 53,000+ Discord servers.],
+    [Engineer interaction, progression, and backend systems with TypeScript, Node.js, discord.js, Redis, NestJS, REST APIs, and PostgreSQL, emphasizing concurrency, correctness, and fault handling.],
+  )),
+)
+
+#section("PROJECTS")
 
 #entry(
   [Sangsaeng-ieum - AI Support Platform for Foreign Workers],
@@ -337,7 +358,9 @@
   )),
 )
 
-#section("HONORS AND AWARDS")
+#pagebreak()
+
+#section("HONORS AND AWARDS", first: true)
 
 #entry(
   [National and Regional Awards - Korea Olympiad in Informatics (KOI)],
@@ -386,5 +409,18 @@
   date: [Sep 30 - Oct 3, 2026],
   body: bullets((
     [Selected for and participated in classes on trading and technology and a team-based mock trading simulation, exploring how mathematics and technology inform trading.],
+  )),
+)
+
+#entry(
+  [Information Technology Gifted Education Program],
+  aside: [Daejeon, South Korea],
+  subtitle: details(
+    [Gifted Education Center, Daejeon Education Information Institute],
+    [Beginner, Intermediate, and Advanced Courses],
+  ),
+  date: [2018 - 2020],
+  body: bullets((
+    [Built a C++ Korean typing tutor (2018), a Python/Qt vocabulary-learning application using the Open Korean Dictionary API (2019), and a KoGPT2 conversational bot (2020).],
   )),
 )
