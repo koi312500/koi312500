@@ -8,7 +8,7 @@ export type SkillBadgeData = {
 };
 
 export type DetailItem = {
-  icon: "location" | "birthday" | "github" | "email" | "education" | "website";
+  icon: "location" | "birthday" | "github" | "email" | "education" | "pronouns";
   label: LocalizedText;
   href?: string;
 };

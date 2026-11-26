@@ -1,10 +1,10 @@
 import {
   ExternalLink,
   GraduationCap,
-  House,
   Mail,
   MapPin,
   PartyPopper,
+  UserRound,
 } from "lucide-react";
 import { details, featuredSkills, intro } from "../data/content";
 import type { Language } from "../lib/navigation";
@@ -17,7 +17,7 @@ const iconMap = {
   birthday: PartyPopper,
   email: Mail,
   education: GraduationCap,
-  website: House,
+  pronouns: UserRound,
 } satisfies Record<Exclude<DetailItem["icon"], "github">, typeof MapPin>;
 
 function DetailIcon({ icon }: { icon: DetailItem["icon"] }) {

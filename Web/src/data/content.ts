@@ -54,9 +54,8 @@ export const details: DetailItem[] = [
     href: "https://github.com/koi312500",
   },
   {
-    icon: "website",
-    label: { en: "https://koi3125.com", ko: "https://koi3125.com" },
-    href: "https://koi3125.com/",
+    icon: "pronouns",
+    label: { en: "he/him", ko: "he/him" },
   },
 ];
 
